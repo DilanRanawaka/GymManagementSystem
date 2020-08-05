@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GymManagementSystem
 {
-    public partial class Customer : Form
+    public partial class Payment : Form
     {
-        public Customer()
+        public Payment()
         {
             InitializeComponent();
         }
@@ -29,6 +29,13 @@ namespace GymManagementSystem
             Login two = new Login();
             this.Hide();
             two.Show();
+        }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            Customer four = new Customer();
+            this.Hide();
+            four.Show();
         }
 
         private void btnInstructor_Click(object sender, EventArgs e)
@@ -54,14 +61,7 @@ namespace GymManagementSystem
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
-            Payment eight = new Payment();
-            this.Hide();
-            eight.Show();
-        }
-
-        private void btnCustomer_Click(object sender, EventArgs e)
-        {
-
+           
         }
     }
 }

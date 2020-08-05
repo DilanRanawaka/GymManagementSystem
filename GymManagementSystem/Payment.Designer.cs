@@ -1,6 +1,6 @@
 ﻿namespace GymManagementSystem
 {
-    partial class Attendance
+    partial class Payment
     {
         /// <summary>
         /// Required designer variable.
@@ -38,35 +38,34 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.txtSearchAttendance = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.txtSearchPayment = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnProceed = new System.Windows.Forms.Button();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.txtTimeOut = new System.Windows.Forms.TextBox();
-            this.TxtTimeIN = new System.Windows.Forms.TextBox();
-            this.txtCusName = new System.Windows.Forms.TextBox();
-            this.txtCusID = new System.Windows.Forms.TextBox();
-            this.txtAttendanceID = new System.Windows.Forms.TextBox();
+            this.TxtAmount = new System.Windows.Forms.TextBox();
+            this.txtCustomerName = new System.Windows.Forms.TextBox();
+            this.txtCustomerID = new System.Windows.Forms.TextBox();
+            this.txtPaymentID = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,7 +77,7 @@
             this.panel1.Controls.Add(this.btnInstructor);
             this.panel1.Controls.Add(this.btnCustomer);
             this.panel1.Controls.Add(this.btnDashboard);
-            this.panel1.Location = new System.Drawing.Point(1, 63);
+            this.panel1.Location = new System.Drawing.Point(0, 63);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(293, 874);
@@ -179,8 +178,7 @@
             this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
             this.panel2.Controls.Add(this.btnLogOut);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Location = new System.Drawing.Point(1, 2);
+            this.panel2.Location = new System.Drawing.Point(0, 1);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1577, 53);
@@ -191,7 +189,7 @@
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.btnLogOut.Location = new System.Drawing.Point(1407, 11);
+            this.btnLogOut.Location = new System.Drawing.Point(1417, 14);
             this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(128, 31);
@@ -211,40 +209,32 @@
             this.label8.TabIndex = 1;
             this.label8.Text = "CROSS FIT-GYM MANAGEMENT SYSTEM";
             // 
-            // panel4
-            // 
-            this.panel4.Location = new System.Drawing.Point(301, 59);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1271, 49);
-            this.panel4.TabIndex = 0;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel3.Controls.Add(this.tableLayoutPanel1);
-            this.panel3.Controls.Add(this.panel6);
+            this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.btnClear);
-            this.panel3.Controls.Add(this.btnRemove);
             this.panel3.Controls.Add(this.btnUpdate);
-            this.panel3.Controls.Add(this.btnAdd);
+            this.panel3.Controls.Add(this.btnProceed);
+            this.panel3.Controls.Add(this.radioButton2);
+            this.panel3.Controls.Add(this.radioButton1);
             this.panel3.Controls.Add(this.dateTimePicker1);
-            this.panel3.Controls.Add(this.txtTimeOut);
-            this.panel3.Controls.Add(this.TxtTimeIN);
-            this.panel3.Controls.Add(this.txtCusName);
-            this.panel3.Controls.Add(this.txtCusID);
-            this.panel3.Controls.Add(this.txtAttendanceID);
+            this.panel3.Controls.Add(this.TxtAmount);
+            this.panel3.Controls.Add(this.txtCustomerName);
+            this.panel3.Controls.Add(this.txtCustomerID);
+            this.panel3.Controls.Add(this.txtPaymentID);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.panel5);
-            this.panel3.Location = new System.Drawing.Point(301, 63);
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Location = new System.Drawing.Point(300, 63);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1272, 871);
+            this.panel3.Size = new System.Drawing.Size(1277, 874);
             this.panel3.TabIndex = 2;
             // 
             // tableLayoutPanel1
@@ -252,34 +242,34 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(155, 628);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(333, 640);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1016, 123);
-            this.tableLayoutPanel1.TabIndex = 36;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(791, 123);
+            this.tableLayoutPanel1.TabIndex = 45;
             // 
-            // panel6
+            // panel5
             // 
-            this.panel6.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel6.Controls.Add(this.txtSearchAttendance);
-            this.panel6.Controls.Add(this.label9);
-            this.panel6.Location = new System.Drawing.Point(835, 128);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(409, 123);
-            this.panel6.TabIndex = 35;
+            this.panel5.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel5.Controls.Add(this.txtSearchPayment);
+            this.panel5.Controls.Add(this.label9);
+            this.panel5.Location = new System.Drawing.Point(836, 128);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(409, 123);
+            this.panel5.TabIndex = 44;
             // 
-            // txtSearchAttendance
+            // txtSearchPayment
             // 
-            this.txtSearchAttendance.Location = new System.Drawing.Point(43, 60);
-            this.txtSearchAttendance.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSearchAttendance.Multiline = true;
-            this.txtSearchAttendance.Name = "txtSearchAttendance";
-            this.txtSearchAttendance.Size = new System.Drawing.Size(330, 40);
-            this.txtSearchAttendance.TabIndex = 1;
+            this.txtSearchPayment.Location = new System.Drawing.Point(43, 60);
+            this.txtSearchPayment.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearchPayment.Multiline = true;
+            this.txtSearchPayment.Name = "txtSearchPayment";
+            this.txtSearchPayment.Size = new System.Drawing.Size(336, 44);
+            this.txtSearchPayment.TabIndex = 1;
             // 
             // label9
             // 
@@ -288,106 +278,112 @@
             this.label9.Location = new System.Drawing.Point(39, 18);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(234, 20);
+            this.label9.Size = new System.Drawing.Size(212, 20);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Search Attendance Details";
+            this.label9.Text = "Search Payment Details";
             // 
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(801, 498);
+            this.btnClear.Location = new System.Drawing.Point(587, 505);
             this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(100, 28);
-            this.btnClear.TabIndex = 34;
+            this.btnClear.TabIndex = 43;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemove.Location = new System.Drawing.Point(621, 498);
-            this.btnRemove.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(100, 28);
-            this.btnRemove.TabIndex = 33;
-            this.btnRemove.Text = "Remove";
-            this.btnRemove.UseVisualStyleBackColor = true;
             // 
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(455, 498);
+            this.btnUpdate.Location = new System.Drawing.Point(423, 505);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 28);
-            this.btnUpdate.TabIndex = 32;
+            this.btnUpdate.TabIndex = 41;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // btnAdd
+            // btnProceed
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(273, 498);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 28);
-            this.btnAdd.TabIndex = 31;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnProceed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProceed.Location = new System.Drawing.Point(241, 505);
+            this.btnProceed.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProceed.Name = "btnProceed";
+            this.btnProceed.Size = new System.Drawing.Size(100, 28);
+            this.btnProceed.TabIndex = 40;
+            this.btnProceed.Text = "Proceed";
+            this.btnProceed.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(587, 415);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(70, 24);
+            this.radioButton2.TabIndex = 39;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Card";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(415, 415);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(73, 24);
+            this.radioButton1.TabIndex = 38;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Cash";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(415, 297);
+            this.dateTimePicker1.Location = new System.Drawing.Point(415, 308);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(348, 22);
-            this.dateTimePicker1.TabIndex = 25;
+            this.dateTimePicker1.TabIndex = 37;
             // 
-            // txtTimeOut
+            // TxtAmount
             // 
-            this.txtTimeOut.Location = new System.Drawing.Point(415, 405);
-            this.txtTimeOut.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTimeOut.Multiline = true;
-            this.txtTimeOut.Name = "txtTimeOut";
-            this.txtTimeOut.Size = new System.Drawing.Size(348, 40);
-            this.txtTimeOut.TabIndex = 24;
+            this.TxtAmount.Location = new System.Drawing.Point(415, 356);
+            this.TxtAmount.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtAmount.Multiline = true;
+            this.TxtAmount.Name = "TxtAmount";
+            this.TxtAmount.Size = new System.Drawing.Size(348, 40);
+            this.TxtAmount.TabIndex = 35;
             // 
-            // TxtTimeIN
+            // txtCustomerName
             // 
-            this.TxtTimeIN.Location = new System.Drawing.Point(415, 341);
-            this.TxtTimeIN.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtTimeIN.Multiline = true;
-            this.TxtTimeIN.Name = "TxtTimeIN";
-            this.TxtTimeIN.Size = new System.Drawing.Size(348, 40);
-            this.TxtTimeIN.TabIndex = 23;
+            this.txtCustomerName.Location = new System.Drawing.Point(415, 244);
+            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCustomerName.Multiline = true;
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.Size = new System.Drawing.Size(348, 36);
+            this.txtCustomerName.TabIndex = 34;
             // 
-            // txtCusName
+            // txtCustomerID
             // 
-            this.txtCusName.Location = new System.Drawing.Point(415, 221);
-            this.txtCusName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCusName.Multiline = true;
-            this.txtCusName.Name = "txtCusName";
-            this.txtCusName.Size = new System.Drawing.Size(348, 43);
-            this.txtCusName.TabIndex = 22;
+            this.txtCustomerID.Location = new System.Drawing.Point(415, 187);
+            this.txtCustomerID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCustomerID.Multiline = true;
+            this.txtCustomerID.Name = "txtCustomerID";
+            this.txtCustomerID.Size = new System.Drawing.Size(348, 34);
+            this.txtCustomerID.TabIndex = 33;
             // 
-            // txtCusID
+            // txtPaymentID
             // 
-            this.txtCusID.Location = new System.Drawing.Point(415, 169);
-            this.txtCusID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCusID.Multiline = true;
-            this.txtCusID.Name = "txtCusID";
-            this.txtCusID.Size = new System.Drawing.Size(348, 40);
-            this.txtCusID.TabIndex = 21;
-            // 
-            // txtAttendanceID
-            // 
-            this.txtAttendanceID.Location = new System.Drawing.Point(415, 109);
-            this.txtAttendanceID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAttendanceID.Multiline = true;
-            this.txtAttendanceID.Name = "txtAttendanceID";
-            this.txtAttendanceID.Size = new System.Drawing.Size(348, 41);
-            this.txtAttendanceID.TabIndex = 20;
+            this.txtPaymentID.Location = new System.Drawing.Point(415, 126);
+            this.txtPaymentID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPaymentID.Multiline = true;
+            this.txtPaymentID.Name = "txtPaymentID";
+            this.txtPaymentID.Size = new System.Drawing.Size(348, 40);
+            this.txtPaymentID.TabIndex = 32;
             // 
             // label6
             // 
@@ -397,19 +393,19 @@
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 20);
-            this.label6.TabIndex = 19;
+            this.label6.TabIndex = 31;
             this.label6.Text = "Date";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(109, 405);
+            this.label5.Location = new System.Drawing.Point(109, 419);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(135, 20);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Departure time";
+            this.label5.Size = new System.Drawing.Size(148, 20);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "Payment Method";
             // 
             // label4
             // 
@@ -418,9 +414,9 @@
             this.label4.Location = new System.Drawing.Point(109, 356);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 20);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Arrival time";
+            this.label4.Size = new System.Drawing.Size(72, 20);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "Amount";
             // 
             // label3
             // 
@@ -430,54 +426,54 @@
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(144, 20);
-            this.label3.TabIndex = 16;
+            this.label3.TabIndex = 28;
             this.label3.Text = "Customer Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(109, 177);
+            this.label2.Location = new System.Drawing.Point(109, 187);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 20);
-            this.label2.TabIndex = 15;
+            this.label2.TabIndex = 27;
             this.label2.Text = "Customer ID";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(109, 109);
+            this.label1.Location = new System.Drawing.Point(109, 128);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 20);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Attendance ID";
+            this.label1.Size = new System.Drawing.Size(106, 20);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Payment ID";
             // 
-            // panel5
+            // panel4
             // 
-            this.panel5.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Location = new System.Drawing.Point(3, 4);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1271, 55);
-            this.panel5.TabIndex = 0;
+            this.panel4.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Location = new System.Drawing.Point(4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1271, 49);
+            this.panel4.TabIndex = 0;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(519, 15);
+            this.label7.Location = new System.Drawing.Point(537, 6);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(187, 29);
+            this.label7.Size = new System.Drawing.Size(137, 29);
             this.label7.TabIndex = 0;
-            this.label7.Text = "ATTENDANCE";
+            this.label7.Text = "PAYMENT";
             // 
-            // Attendance
+            // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -488,17 +484,17 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(1597, 984);
             this.MinimumSize = new System.Drawing.Size(1597, 984);
-            this.Name = "Attendance";
-            this.Text = "Attendance";
+            this.Name = "Payment";
+            this.Text = "Payement";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -507,15 +503,15 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox txtTimeOut;
-        private System.Windows.Forms.TextBox TxtTimeIN;
-        private System.Windows.Forms.TextBox txtCusName;
-        private System.Windows.Forms.TextBox txtCusID;
-        private System.Windows.Forms.TextBox txtAttendanceID;
+        private System.Windows.Forms.TextBox TxtAmount;
+        private System.Windows.Forms.TextBox txtCustomerName;
+        private System.Windows.Forms.TextBox txtCustomerID;
+        private System.Windows.Forms.TextBox txtPaymentID;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -523,14 +519,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox txtSearchAttendance;
+        private System.Windows.Forms.Button btnProceed;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox txtSearchPayment;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnPayment;
         private System.Windows.Forms.Button btnAttendance;
         private System.Windows.Forms.Button btnAccessories;
