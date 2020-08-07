@@ -130,15 +130,18 @@ namespace GymManagementSystem
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            //string qry = "UPDATE Customer SET CustomerName='" + txtCustomerName.Text + "',Address='" + txtCustomerAddress.Text + "',NIC='" + txtCustomerNIC.Text + "',Email='" + txtEmail.Text + "',Phone='" + txtno.Text + "' WHERE CustomerID ='"+txtCustomerID.Text+"'";
 
-            string qry = "UPDATE Customer SET CustomerName = @cust Where CustomerID = @custID";
+            string qry = "UPDATE Customer SET CustomerName = @cust, Address=@add, NIC=@nic, Email=@mail, Phone=@no  Where CustomerID = @custID";
             SqlCommand cmd = new SqlCommand(qry,con);
             try
             {
                 con.Open();
 
                 cmd.Parameters.AddWithValue("@cust", txtCustomerName.Text);
+                cmd.Parameters.AddWithValue("@add", txtCustomerAddress.Text);
+                cmd.Parameters.AddWithValue("@nic", txtCustomerNIC.Text);
+                cmd.Parameters.AddWithValue("@mail", txtEmail.Text);
+                cmd.Parameters.AddWithValue("@no", txtno.Text);
                 cmd.Parameters.AddWithValue("@custID", txtCustomerID.Text);
 
                 cmd.ExecuteNonQuery();

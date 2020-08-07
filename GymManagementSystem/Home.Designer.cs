@@ -47,11 +47,9 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnViewInstructors = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblinstructorcount = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnViewMembers = new System.Windows.Forms.Button();
             this.lblCustomerCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -242,7 +240,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(125, 31);
             this.label10.TabIndex = 3;
-            this.label10.Text = "Rs.20000";
+            this.label10.Text = "Rs.25000";
             // 
             // label9
             // 
@@ -301,55 +299,40 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel5.Controls.Add(this.btnViewInstructors);
-            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.lblinstructorcount);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Location = new System.Drawing.Point(753, 69);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(395, 203);
             this.panel5.TabIndex = 1;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
-            // btnViewInstructors
+            // lblinstructorcount
             // 
-            this.btnViewInstructors.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnViewInstructors.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnViewInstructors.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewInstructors.Location = new System.Drawing.Point(163, 111);
-            this.btnViewInstructors.Margin = new System.Windows.Forms.Padding(4);
-            this.btnViewInstructors.Name = "btnViewInstructors";
-            this.btnViewInstructors.Size = new System.Drawing.Size(100, 28);
-            this.btnViewInstructors.TabIndex = 4;
-            this.btnViewInstructors.Text = "View";
-            this.btnViewInstructors.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(191, 76);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(24, 25);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "8";
+            this.lblinstructorcount.AutoSize = true;
+            this.lblinstructorcount.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblinstructorcount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblinstructorcount.Location = new System.Drawing.Point(183, 111);
+            this.lblinstructorcount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblinstructorcount.Name = "lblinstructorcount";
+            this.lblinstructorcount.Size = new System.Drawing.Size(0, 39);
+            this.lblinstructorcount.TabIndex = 3;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(112, 33);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(85, 45);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(167, 25);
+            this.label6.Size = new System.Drawing.Size(241, 36);
             this.label6.TabIndex = 2;
             this.label6.Text = "INSTRUCTORS";
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel4.Controls.Add(this.btnViewMembers);
             this.panel4.Controls.Add(this.lblCustomerCount);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Location = new System.Drawing.Point(89, 69);
@@ -359,39 +342,25 @@
             this.panel4.TabIndex = 0;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
-            // btnViewMembers
-            // 
-            this.btnViewMembers.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnViewMembers.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnViewMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewMembers.Location = new System.Drawing.Point(149, 111);
-            this.btnViewMembers.Margin = new System.Windows.Forms.Padding(4);
-            this.btnViewMembers.Name = "btnViewMembers";
-            this.btnViewMembers.Size = new System.Drawing.Size(100, 28);
-            this.btnViewMembers.TabIndex = 2;
-            this.btnViewMembers.Text = "View";
-            this.btnViewMembers.UseVisualStyleBackColor = false;
-            // 
             // lblCustomerCount
             // 
             this.lblCustomerCount.AutoSize = true;
-            this.lblCustomerCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomerCount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblCustomerCount.Location = new System.Drawing.Point(179, 79);
+            this.lblCustomerCount.Location = new System.Drawing.Point(162, 111);
             this.lblCustomerCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCustomerCount.Name = "lblCustomerCount";
-            this.lblCustomerCount.Size = new System.Drawing.Size(36, 25);
+            this.lblCustomerCount.Size = new System.Drawing.Size(0, 39);
             this.lblCustomerCount.TabIndex = 1;
-            this.lblCustomerCount.Text = "35";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(133, 34);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(107, 45);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 25);
+            this.label2.Size = new System.Drawing.Size(174, 36);
             this.label2.TabIndex = 0;
             this.label2.Text = "MEMBERS";
             // 
@@ -442,7 +411,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblinstructorcount;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblCustomerCount;
         private System.Windows.Forms.Label label2;
@@ -450,7 +419,5 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnViewInstructors;
-        private System.Windows.Forms.Button btnViewMembers;
     }
 }

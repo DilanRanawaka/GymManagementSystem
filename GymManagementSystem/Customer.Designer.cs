@@ -39,7 +39,10 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.customerdetailsgrid = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.txtSearchCustomer = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
@@ -63,15 +66,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.customerdetailsgrid = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerdetailsgrid)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customerdetailsgrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -247,6 +247,16 @@
             this.panel3.Size = new System.Drawing.Size(1277, 874);
             this.panel3.TabIndex = 2;
             // 
+            // customerdetailsgrid
+            // 
+            this.customerdetailsgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customerdetailsgrid.Location = new System.Drawing.Point(55, 596);
+            this.customerdetailsgrid.Name = "customerdetailsgrid";
+            this.customerdetailsgrid.RowHeadersWidth = 51;
+            this.customerdetailsgrid.RowTemplate.Height = 24;
+            this.customerdetailsgrid.Size = new System.Drawing.Size(1107, 278);
+            this.customerdetailsgrid.TabIndex = 21;
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -259,6 +269,34 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1107, 74);
             this.panel5.TabIndex = 20;
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.button2.Location = new System.Drawing.Point(772, 23);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(128, 31);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Reset";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.button1.Location = new System.Drawing.Point(636, 23);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 31);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtSearchCustomer
             // 
@@ -438,7 +476,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(51, 214);
+            this.label5.Location = new System.Drawing.Point(51, 224);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 20);
@@ -448,7 +486,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(51, 167);
+            this.label4.Location = new System.Drawing.Point(51, 172);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 20);
@@ -498,44 +536,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "CUSTOMER DETAILS";
             // 
-            // customerdetailsgrid
-            // 
-            this.customerdetailsgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customerdetailsgrid.Location = new System.Drawing.Point(55, 596);
-            this.customerdetailsgrid.Name = "customerdetailsgrid";
-            this.customerdetailsgrid.RowHeadersWidth = 51;
-            this.customerdetailsgrid.RowTemplate.Height = 24;
-            this.customerdetailsgrid.Size = new System.Drawing.Size(1107, 278);
-            this.customerdetailsgrid.TabIndex = 21;
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.button1.Location = new System.Drawing.Point(636, 23);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 31);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.button2.Location = new System.Drawing.Point(772, 23);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 31);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Reset";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -554,11 +554,11 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerdetailsgrid)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customerdetailsgrid)).EndInit();
             this.ResumeLayout(false);
 
         }

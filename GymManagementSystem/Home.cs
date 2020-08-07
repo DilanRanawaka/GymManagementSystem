@@ -40,6 +40,7 @@ namespace GymManagementSystem
                 bindingSource1.DataSource = DS.Tables["StudentDetails"];
 
                 lblCustomerCount.Text = bindingSource1.Count.ToString();
+                lblinstructorcount.Text = bindingSource1.Count.ToString();
             }
             catch (Exception ex)
             {
@@ -106,6 +107,11 @@ namespace GymManagementSystem
             Payment eight = new Payment();
             this.Hide();
             eight.Show();
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
