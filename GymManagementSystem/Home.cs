@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,42 @@ namespace GymManagementSystem
 {
     public partial class Home : Form
     {
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Pubz\Documents\GymDatabase.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlDataAdapter DA;
+        DataSet DS = null;
+        BindingSource bindingSource1 = new BindingSource();
+
         public Home()
         {
             InitializeComponent();
+            LoadAllCustomer();
+        }
+
+        private void LoadAllCustomer()
+        {
+            try
+            {
+                DS = new DataSet();
+                bindingSource1.DataSource = null;
+
+                con.Open();
+                string qry = "Select * from Customer ";
+
+                DA = new SqlDataAdapter(qry, con);
+
+                DA.Fill(DS, "StudentDetails");
+                bindingSource1.DataSource = DS.Tables["StudentDetails"];
+
+                lblCustomerCount.Text = bindingSource1.Count.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error occured : " + ex);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)

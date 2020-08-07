@@ -52,7 +52,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnViewMembers = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblCustomerCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -350,7 +350,7 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel4.Controls.Add(this.btnViewMembers);
-            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.lblCustomerCount);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Location = new System.Drawing.Point(89, 69);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
@@ -372,17 +372,17 @@
             this.btnViewMembers.Text = "View";
             this.btnViewMembers.UseVisualStyleBackColor = false;
             // 
-            // label3
+            // lblCustomerCount
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(179, 79);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 25);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "35";
+            this.lblCustomerCount.AutoSize = true;
+            this.lblCustomerCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerCount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblCustomerCount.Location = new System.Drawing.Point(179, 79);
+            this.lblCustomerCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCustomerCount.Name = "lblCustomerCount";
+            this.lblCustomerCount.Size = new System.Drawing.Size(36, 25);
+            this.lblCustomerCount.TabIndex = 1;
+            this.lblCustomerCount.Text = "35";
             // 
             // label2
             // 
@@ -444,7 +444,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblCustomerCount;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Label label10;

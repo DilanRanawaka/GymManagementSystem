@@ -39,7 +39,6 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtSearchCustomer = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -49,7 +48,7 @@
             this.btnRegister = new System.Windows.Forms.Button();
             this.radioCustomerFemale = new System.Windows.Forms.RadioButton();
             this.radioCustomerMale = new System.Windows.Forms.RadioButton();
-            this.txt = new System.Windows.Forms.TextBox();
+            this.txtno = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtCustomerNIC = new System.Windows.Forms.TextBox();
             this.txtCustomerAddress = new System.Windows.Forms.TextBox();
@@ -64,11 +63,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.customerdetailsgrid = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerdetailsgrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -215,7 +218,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel3.Controls.Add(this.tableLayoutPanel1);
+            this.panel3.Controls.Add(this.customerdetailsgrid);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.btnClear);
             this.panel3.Controls.Add(this.btnRemove);
@@ -223,7 +226,7 @@
             this.panel3.Controls.Add(this.btnRegister);
             this.panel3.Controls.Add(this.radioCustomerFemale);
             this.panel3.Controls.Add(this.radioCustomerMale);
-            this.panel3.Controls.Add(this.txt);
+            this.panel3.Controls.Add(this.txtno);
             this.panel3.Controls.Add(this.txtEmail);
             this.panel3.Controls.Add(this.txtCustomerNIC);
             this.panel3.Controls.Add(this.txtCustomerAddress);
@@ -244,47 +247,32 @@
             this.panel3.Size = new System.Drawing.Size(1277, 874);
             this.panel3.TabIndex = 2;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 193F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 211F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 183F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(225, 587);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(805, 123);
-            this.tableLayoutPanel1.TabIndex = 21;
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel5.Controls.Add(this.button2);
+            this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.txtSearchCustomer);
             this.panel5.Controls.Add(this.label9);
-            this.panel5.Location = new System.Drawing.Point(829, 87);
+            this.panel5.Location = new System.Drawing.Point(55, 515);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(409, 123);
+            this.panel5.Size = new System.Drawing.Size(1107, 74);
             this.panel5.TabIndex = 20;
             // 
             // txtSearchCustomer
             // 
-            this.txtSearchCustomer.Location = new System.Drawing.Point(43, 60);
+            this.txtSearchCustomer.Location = new System.Drawing.Point(218, 18);
             this.txtSearchCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearchCustomer.Multiline = true;
             this.txtSearchCustomer.Name = "txtSearchCustomer";
-            this.txtSearchCustomer.Size = new System.Drawing.Size(330, 40);
+            this.txtSearchCustomer.Size = new System.Drawing.Size(399, 40);
             this.txtSearchCustomer.TabIndex = 1;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(39, 18);
+            this.label9.Location = new System.Drawing.Point(20, 29);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(155, 20);
@@ -294,55 +282,59 @@
             // btnClear
             // 
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnClear.Location = new System.Drawing.Point(746, 449);
+            this.btnClear.Location = new System.Drawing.Point(716, 454);
             this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(100, 28);
             this.btnClear.TabIndex = 19;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnRemove
             // 
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnRemove.Location = new System.Drawing.Point(541, 449);
+            this.btnRemove.Location = new System.Drawing.Point(608, 454);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(100, 28);
             this.btnRemove.TabIndex = 18;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnUpdate
             // 
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnUpdate.Location = new System.Drawing.Point(342, 449);
+            this.btnUpdate.Location = new System.Drawing.Point(500, 454);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 28);
             this.btnUpdate.TabIndex = 17;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnRegister
             // 
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnRegister.Location = new System.Drawing.Point(130, 449);
+            this.btnRegister.Location = new System.Drawing.Point(392, 454);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(100, 28);
             this.btnRegister.TabIndex = 16;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // radioCustomerFemale
             // 
             this.radioCustomerFemale.AutoSize = true;
-            this.radioCustomerFemale.Location = new System.Drawing.Point(541, 384);
+            this.radioCustomerFemale.Location = new System.Drawing.Point(500, 393);
             this.radioCustomerFemale.Margin = new System.Windows.Forms.Padding(4);
             this.radioCustomerFemale.Name = "radioCustomerFemale";
             this.radioCustomerFemale.Size = new System.Drawing.Size(91, 24);
-            this.radioCustomerFemale.TabIndex = 15;
+            this.radioCustomerFemale.TabIndex = 8;
             this.radioCustomerFemale.TabStop = true;
             this.radioCustomerFemale.Text = "Female";
             this.radioCustomerFemale.UseVisualStyleBackColor = true;
@@ -350,23 +342,23 @@
             // radioCustomerMale
             // 
             this.radioCustomerMale.AutoSize = true;
-            this.radioCustomerMale.Location = new System.Drawing.Point(392, 384);
+            this.radioCustomerMale.Location = new System.Drawing.Point(392, 395);
             this.radioCustomerMale.Margin = new System.Windows.Forms.Padding(4);
             this.radioCustomerMale.Name = "radioCustomerMale";
             this.radioCustomerMale.Size = new System.Drawing.Size(70, 24);
-            this.radioCustomerMale.TabIndex = 14;
+            this.radioCustomerMale.TabIndex = 7;
             this.radioCustomerMale.TabStop = true;
             this.radioCustomerMale.Text = "Male";
             this.radioCustomerMale.UseVisualStyleBackColor = true;
             // 
-            // txt
+            // txtno
             // 
-            this.txt.Location = new System.Drawing.Point(392, 333);
-            this.txt.Margin = new System.Windows.Forms.Padding(4);
-            this.txt.Multiline = true;
-            this.txt.Name = "txt";
-            this.txt.Size = new System.Drawing.Size(359, 38);
-            this.txt.TabIndex = 13;
+            this.txtno.Location = new System.Drawing.Point(392, 333);
+            this.txtno.Margin = new System.Windows.Forms.Padding(4);
+            this.txtno.Multiline = true;
+            this.txtno.Name = "txtno";
+            this.txtno.Size = new System.Drawing.Size(563, 38);
+            this.txtno.TabIndex = 6;
             // 
             // txtEmail
             // 
@@ -374,8 +366,8 @@
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(359, 41);
-            this.txtEmail.TabIndex = 12;
+            this.txtEmail.Size = new System.Drawing.Size(563, 41);
+            this.txtEmail.TabIndex = 5;
             // 
             // txtCustomerNIC
             // 
@@ -383,8 +375,8 @@
             this.txtCustomerNIC.Margin = new System.Windows.Forms.Padding(4);
             this.txtCustomerNIC.Multiline = true;
             this.txtCustomerNIC.Name = "txtCustomerNIC";
-            this.txtCustomerNIC.Size = new System.Drawing.Size(359, 39);
-            this.txtCustomerNIC.TabIndex = 11;
+            this.txtCustomerNIC.Size = new System.Drawing.Size(563, 39);
+            this.txtCustomerNIC.TabIndex = 4;
             // 
             // txtCustomerAddress
             // 
@@ -392,8 +384,8 @@
             this.txtCustomerAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtCustomerAddress.Multiline = true;
             this.txtCustomerAddress.Name = "txtCustomerAddress";
-            this.txtCustomerAddress.Size = new System.Drawing.Size(359, 38);
-            this.txtCustomerAddress.TabIndex = 10;
+            this.txtCustomerAddress.Size = new System.Drawing.Size(563, 38);
+            this.txtCustomerAddress.TabIndex = 3;
             // 
             // txtCustomerName
             // 
@@ -401,8 +393,8 @@
             this.txtCustomerName.Margin = new System.Windows.Forms.Padding(4);
             this.txtCustomerName.Multiline = true;
             this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Size = new System.Drawing.Size(359, 43);
-            this.txtCustomerName.TabIndex = 9;
+            this.txtCustomerName.Size = new System.Drawing.Size(563, 43);
+            this.txtCustomerName.TabIndex = 2;
             // 
             // txtCustomerID
             // 
@@ -410,13 +402,13 @@
             this.txtCustomerID.Margin = new System.Windows.Forms.Padding(4);
             this.txtCustomerID.Multiline = true;
             this.txtCustomerID.Name = "txtCustomerID";
-            this.txtCustomerID.Size = new System.Drawing.Size(359, 42);
-            this.txtCustomerID.TabIndex = 8;
+            this.txtCustomerID.Size = new System.Drawing.Size(280, 42);
+            this.txtCustomerID.TabIndex = 1;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(51, 386);
+            this.label8.Location = new System.Drawing.Point(51, 397);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 20);
@@ -506,6 +498,44 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "CUSTOMER DETAILS";
             // 
+            // customerdetailsgrid
+            // 
+            this.customerdetailsgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customerdetailsgrid.Location = new System.Drawing.Point(55, 596);
+            this.customerdetailsgrid.Name = "customerdetailsgrid";
+            this.customerdetailsgrid.RowHeadersWidth = 51;
+            this.customerdetailsgrid.RowTemplate.Height = 24;
+            this.customerdetailsgrid.Size = new System.Drawing.Size(1107, 278);
+            this.customerdetailsgrid.TabIndex = 21;
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.button1.Location = new System.Drawing.Point(636, 23);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 31);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.button2.Location = new System.Drawing.Point(772, 23);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(128, 31);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Reset";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -528,6 +558,7 @@
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerdetailsgrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -546,7 +577,7 @@
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.RadioButton radioCustomerFemale;
         private System.Windows.Forms.RadioButton radioCustomerMale;
-        private System.Windows.Forms.TextBox txt;
+        private System.Windows.Forms.TextBox txtno;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtCustomerNIC;
         private System.Windows.Forms.TextBox txtCustomerAddress;
@@ -568,7 +599,9 @@
         private System.Windows.Forms.Button btnCustomer;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.DataGridView customerdetailsgrid;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
