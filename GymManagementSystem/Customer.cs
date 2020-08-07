@@ -151,6 +151,8 @@ namespace GymManagementSystem
             finally
             {
                 con.Close();
+                customerdetailsgrid.DataSource = null;
+                LoadAllCustomer();
             }
         }
 
@@ -237,6 +239,8 @@ namespace GymManagementSystem
             finally
             {
                 con.Close();
+                customerdetailsgrid.DataSource = null;
+                LoadAllCustomer();
             }
         }
     }
