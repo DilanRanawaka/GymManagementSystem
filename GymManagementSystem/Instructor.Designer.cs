@@ -288,7 +288,7 @@
             this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(100, 28);
-            this.btnClear.TabIndex = 23;
+            this.btnClear.TabIndex = 12;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -301,7 +301,7 @@
             this.btnRemove.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(100, 28);
-            this.btnRemove.TabIndex = 22;
+            this.btnRemove.TabIndex = 11;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
@@ -314,7 +314,7 @@
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 28);
-            this.btnUpdate.TabIndex = 21;
+            this.btnUpdate.TabIndex = 10;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -327,7 +327,7 @@
             this.btnRegister.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(100, 28);
-            this.btnRegister.TabIndex = 20;
+            this.btnRegister.TabIndex = 9;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
@@ -339,7 +339,7 @@
             this.txtInstructorTelNo.Multiline = true;
             this.txtInstructorTelNo.Name = "txtInstructorTelNo";
             this.txtInstructorTelNo.Size = new System.Drawing.Size(568, 37);
-            this.txtInstructorTelNo.TabIndex = 19;
+            this.txtInstructorTelNo.TabIndex = 6;
             // 
             // txtInstructorEmail
             // 
@@ -348,7 +348,7 @@
             this.txtInstructorEmail.Multiline = true;
             this.txtInstructorEmail.Name = "txtInstructorEmail";
             this.txtInstructorEmail.Size = new System.Drawing.Size(568, 39);
-            this.txtInstructorEmail.TabIndex = 18;
+            this.txtInstructorEmail.TabIndex = 5;
             // 
             // txtInstructorNIC
             // 
@@ -357,7 +357,7 @@
             this.txtInstructorNIC.Multiline = true;
             this.txtInstructorNIC.Name = "txtInstructorNIC";
             this.txtInstructorNIC.Size = new System.Drawing.Size(568, 43);
-            this.txtInstructorNIC.TabIndex = 17;
+            this.txtInstructorNIC.TabIndex = 4;
             // 
             // txtInstructorAddress
             // 
@@ -366,7 +366,7 @@
             this.txtInstructorAddress.Multiline = true;
             this.txtInstructorAddress.Name = "txtInstructorAddress";
             this.txtInstructorAddress.Size = new System.Drawing.Size(568, 36);
-            this.txtInstructorAddress.TabIndex = 16;
+            this.txtInstructorAddress.TabIndex = 3;
             this.txtInstructorAddress.TextChanged += new System.EventHandler(this.txtInstructorAddress_TextChanged);
             // 
             // txtInstructorName
@@ -376,7 +376,7 @@
             this.txtInstructorName.Multiline = true;
             this.txtInstructorName.Name = "txtInstructorName";
             this.txtInstructorName.Size = new System.Drawing.Size(568, 39);
-            this.txtInstructorName.TabIndex = 15;
+            this.txtInstructorName.TabIndex = 2;
             // 
             // txtInstructorID
             // 
@@ -385,7 +385,7 @@
             this.txtInstructorID.Multiline = true;
             this.txtInstructorID.Name = "txtInstructorID";
             this.txtInstructorID.Size = new System.Drawing.Size(288, 37);
-            this.txtInstructorID.TabIndex = 14;
+            this.txtInstructorID.TabIndex = 1;
             // 
             // label7
             // 
@@ -537,7 +537,7 @@
             this.radioCustomerMale.Location = new System.Drawing.Point(409, 371);
             this.radioCustomerMale.Name = "radioCustomerMale";
             this.radioCustomerMale.Size = new System.Drawing.Size(70, 24);
-            this.radioCustomerMale.TabIndex = 29;
+            this.radioCustomerMale.TabIndex = 7;
             this.radioCustomerMale.TabStop = true;
             this.radioCustomerMale.Text = "Male";
             this.radioCustomerMale.UseVisualStyleBackColor = true;
@@ -549,7 +549,7 @@
             this.radioCustomerFemale.Location = new System.Drawing.Point(607, 371);
             this.radioCustomerFemale.Name = "radioCustomerFemale";
             this.radioCustomerFemale.Size = new System.Drawing.Size(91, 24);
-            this.radioCustomerFemale.TabIndex = 30;
+            this.radioCustomerFemale.TabIndex = 8;
             this.radioCustomerFemale.TabStop = true;
             this.radioCustomerFemale.Text = "Female";
             this.radioCustomerFemale.UseVisualStyleBackColor = true;
