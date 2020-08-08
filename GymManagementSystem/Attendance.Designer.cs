@@ -40,7 +40,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtSearchAttendance = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -62,11 +61,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.AttendanceGridView = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AttendanceGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -222,7 +225,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel3.Controls.Add(this.tableLayoutPanel1);
+            this.panel3.Controls.Add(this.AttendanceGridView);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.btnClear);
             this.panel3.Controls.Add(this.btnRemove);
@@ -247,45 +250,33 @@
             this.panel3.Size = new System.Drawing.Size(1272, 871);
             this.panel3.TabIndex = 2;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(155, 628);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1016, 123);
-            this.tableLayoutPanel1.TabIndex = 36;
-            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel6.Controls.Add(this.button2);
+            this.panel6.Controls.Add(this.button1);
             this.panel6.Controls.Add(this.txtSearchAttendance);
             this.panel6.Controls.Add(this.label9);
-            this.panel6.Location = new System.Drawing.Point(835, 128);
+            this.panel6.Location = new System.Drawing.Point(113, 493);
             this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(409, 123);
+            this.panel6.Size = new System.Drawing.Size(1105, 84);
             this.panel6.TabIndex = 35;
             // 
             // txtSearchAttendance
             // 
-            this.txtSearchAttendance.Location = new System.Drawing.Point(43, 60);
+            this.txtSearchAttendance.Location = new System.Drawing.Point(293, 18);
             this.txtSearchAttendance.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearchAttendance.Multiline = true;
             this.txtSearchAttendance.Name = "txtSearchAttendance";
-            this.txtSearchAttendance.Size = new System.Drawing.Size(330, 40);
+            this.txtSearchAttendance.Size = new System.Drawing.Size(339, 40);
             this.txtSearchAttendance.TabIndex = 1;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(39, 18);
+            this.label9.Location = new System.Drawing.Point(4, 29);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(234, 20);
@@ -295,7 +286,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(801, 498);
+            this.btnClear.Location = new System.Drawing.Point(829, 425);
             this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(100, 28);
@@ -306,7 +297,7 @@
             // btnRemove
             // 
             this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemove.Location = new System.Drawing.Point(621, 498);
+            this.btnRemove.Location = new System.Drawing.Point(721, 425);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(100, 28);
@@ -317,7 +308,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(455, 498);
+            this.btnUpdate.Location = new System.Drawing.Point(613, 425);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 28);
@@ -328,7 +319,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(273, 498);
+            this.btnAdd.Location = new System.Drawing.Point(505, 425);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 28);
@@ -339,62 +330,68 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(415, 297);
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(415, 257);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(348, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(514, 27);
             this.dateTimePicker1.TabIndex = 25;
             // 
             // txtTimeOut
             // 
-            this.txtTimeOut.Location = new System.Drawing.Point(415, 405);
+            this.txtTimeOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimeOut.Location = new System.Drawing.Point(415, 347);
             this.txtTimeOut.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimeOut.Multiline = true;
             this.txtTimeOut.Name = "txtTimeOut";
-            this.txtTimeOut.Size = new System.Drawing.Size(348, 40);
+            this.txtTimeOut.Size = new System.Drawing.Size(514, 40);
             this.txtTimeOut.TabIndex = 24;
             // 
             // TxtTimeIN
             // 
-            this.TxtTimeIN.Location = new System.Drawing.Point(415, 341);
+            this.TxtTimeIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTimeIN.Location = new System.Drawing.Point(415, 299);
             this.TxtTimeIN.Margin = new System.Windows.Forms.Padding(4);
             this.TxtTimeIN.Multiline = true;
             this.TxtTimeIN.Name = "TxtTimeIN";
-            this.TxtTimeIN.Size = new System.Drawing.Size(348, 40);
+            this.TxtTimeIN.Size = new System.Drawing.Size(514, 40);
             this.TxtTimeIN.TabIndex = 23;
             // 
             // txtCusName
             // 
-            this.txtCusName.Location = new System.Drawing.Point(415, 221);
+            this.txtCusName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCusName.Location = new System.Drawing.Point(413, 185);
             this.txtCusName.Margin = new System.Windows.Forms.Padding(4);
             this.txtCusName.Multiline = true;
             this.txtCusName.Name = "txtCusName";
-            this.txtCusName.Size = new System.Drawing.Size(348, 43);
+            this.txtCusName.Size = new System.Drawing.Size(514, 43);
             this.txtCusName.TabIndex = 22;
             // 
             // txtCusID
             // 
-            this.txtCusID.Location = new System.Drawing.Point(415, 169);
+            this.txtCusID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCusID.Location = new System.Drawing.Point(415, 137);
             this.txtCusID.Margin = new System.Windows.Forms.Padding(4);
             this.txtCusID.Multiline = true;
             this.txtCusID.Name = "txtCusID";
-            this.txtCusID.Size = new System.Drawing.Size(348, 40);
+            this.txtCusID.Size = new System.Drawing.Size(298, 40);
             this.txtCusID.TabIndex = 21;
             // 
             // txtAttendanceID
             // 
-            this.txtAttendanceID.Location = new System.Drawing.Point(415, 109);
+            this.txtAttendanceID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAttendanceID.Location = new System.Drawing.Point(415, 88);
             this.txtAttendanceID.Margin = new System.Windows.Forms.Padding(4);
             this.txtAttendanceID.Multiline = true;
             this.txtAttendanceID.Name = "txtAttendanceID";
-            this.txtAttendanceID.Size = new System.Drawing.Size(348, 41);
+            this.txtAttendanceID.Size = new System.Drawing.Size(298, 41);
             this.txtAttendanceID.TabIndex = 20;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(109, 299);
+            this.label6.Location = new System.Drawing.Point(109, 257);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 20);
@@ -405,7 +402,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(109, 405);
+            this.label5.Location = new System.Drawing.Point(109, 361);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(135, 20);
@@ -416,7 +413,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(109, 356);
+            this.label4.Location = new System.Drawing.Point(109, 310);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 20);
@@ -427,7 +424,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(109, 244);
+            this.label3.Location = new System.Drawing.Point(109, 204);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(144, 20);
@@ -438,7 +435,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(109, 177);
+            this.label2.Location = new System.Drawing.Point(109, 146);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 20);
@@ -449,7 +446,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(109, 109);
+            this.label1.Location = new System.Drawing.Point(109, 93);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 20);
@@ -478,6 +475,42 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "ATTENDANCE";
             // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.button2.Location = new System.Drawing.Point(798, 23);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(128, 31);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Reset";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.button1.Location = new System.Drawing.Point(662, 23);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 31);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // AttendanceGridView
+            // 
+            this.AttendanceGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AttendanceGridView.Location = new System.Drawing.Point(113, 607);
+            this.AttendanceGridView.Name = "AttendanceGridView";
+            this.AttendanceGridView.RowHeadersWidth = 51;
+            this.AttendanceGridView.RowTemplate.Height = 24;
+            this.AttendanceGridView.Size = new System.Drawing.Size(1105, 238);
+            this.AttendanceGridView.TabIndex = 36;
+            // 
             // Attendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -500,6 +533,7 @@
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AttendanceGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -530,7 +564,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox txtSearchAttendance;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnPayment;
         private System.Windows.Forms.Button btnAttendance;
@@ -540,5 +573,8 @@
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.DataGridView AttendanceGridView;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

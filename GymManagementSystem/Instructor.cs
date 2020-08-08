@@ -161,7 +161,7 @@ namespace GymManagementSystem
             {
                 con.Open();
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("User Registered Successfully");
+                MessageBox.Show("Instructor Registered Successfully");
 
             }
             catch (Exception ex)

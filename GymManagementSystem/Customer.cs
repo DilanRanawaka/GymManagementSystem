@@ -36,8 +36,8 @@ namespace GymManagementSystem
 
                 DA = new SqlDataAdapter(qry, con);
 
-                DA.Fill(DS, "StudentDetails");
-                bindingSource1.DataSource = DS.Tables["StudentDetails"];                
+                DA.Fill(DS, "Customer");
+                bindingSource1.DataSource = DS.Tables["Customer"];                
                 customerdetailsgrid.DataSource = bindingSource1;
             }
             catch (Exception ex)

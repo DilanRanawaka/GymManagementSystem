@@ -39,7 +39,6 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtSearchPayment = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -61,11 +60,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.PaymentGridView = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PaymentGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -212,7 +215,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel3.Controls.Add(this.tableLayoutPanel1);
+            this.panel3.Controls.Add(this.PaymentGridView);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.btnClear);
             this.panel3.Controls.Add(this.btnUpdate);
@@ -237,45 +240,33 @@
             this.panel3.Size = new System.Drawing.Size(1277, 874);
             this.panel3.TabIndex = 2;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(333, 640);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(791, 123);
-            this.tableLayoutPanel1.TabIndex = 45;
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel5.Controls.Add(this.button2);
+            this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.txtSearchPayment);
             this.panel5.Controls.Add(this.label9);
-            this.panel5.Location = new System.Drawing.Point(836, 128);
+            this.panel5.Location = new System.Drawing.Point(113, 481);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(409, 123);
+            this.panel5.Size = new System.Drawing.Size(1088, 93);
             this.panel5.TabIndex = 44;
             // 
             // txtSearchPayment
             // 
-            this.txtSearchPayment.Location = new System.Drawing.Point(43, 60);
+            this.txtSearchPayment.Location = new System.Drawing.Point(255, 15);
             this.txtSearchPayment.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearchPayment.Multiline = true;
             this.txtSearchPayment.Name = "txtSearchPayment";
-            this.txtSearchPayment.Size = new System.Drawing.Size(336, 44);
+            this.txtSearchPayment.Size = new System.Drawing.Size(379, 44);
             this.txtSearchPayment.TabIndex = 1;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(39, 18);
+            this.label9.Location = new System.Drawing.Point(13, 15);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(212, 20);
@@ -285,7 +276,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(587, 505);
+            this.btnClear.Location = new System.Drawing.Point(863, 429);
             this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(100, 28);
@@ -296,7 +287,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(423, 505);
+            this.btnUpdate.Location = new System.Drawing.Point(755, 429);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 28);
@@ -307,7 +298,7 @@
             // btnProceed
             // 
             this.btnProceed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProceed.Location = new System.Drawing.Point(241, 505);
+            this.btnProceed.Location = new System.Drawing.Point(647, 429);
             this.btnProceed.Margin = new System.Windows.Forms.Padding(4);
             this.btnProceed.Name = "btnProceed";
             this.btnProceed.Size = new System.Drawing.Size(100, 28);
@@ -319,7 +310,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(587, 415);
+            this.radioButton2.Location = new System.Drawing.Point(587, 382);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(70, 24);
@@ -332,7 +323,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(415, 415);
+            this.radioButton1.Location = new System.Drawing.Point(415, 382);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(73, 24);
@@ -343,53 +334,55 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(415, 308);
+            this.dateTimePicker1.Location = new System.Drawing.Point(415, 276);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(348, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(548, 22);
             this.dateTimePicker1.TabIndex = 37;
             // 
             // TxtAmount
             // 
-            this.TxtAmount.Location = new System.Drawing.Point(415, 356);
+            this.TxtAmount.Location = new System.Drawing.Point(415, 319);
             this.TxtAmount.Margin = new System.Windows.Forms.Padding(4);
             this.TxtAmount.Multiline = true;
             this.TxtAmount.Name = "TxtAmount";
-            this.TxtAmount.Size = new System.Drawing.Size(348, 40);
+            this.TxtAmount.Size = new System.Drawing.Size(548, 40);
             this.TxtAmount.TabIndex = 35;
+            this.TxtAmount.TextChanged += new System.EventHandler(this.TxtAmount_TextChanged);
             // 
             // txtCustomerName
             // 
-            this.txtCustomerName.Location = new System.Drawing.Point(415, 244);
+            this.txtCustomerName.Location = new System.Drawing.Point(415, 204);
             this.txtCustomerName.Margin = new System.Windows.Forms.Padding(4);
             this.txtCustomerName.Multiline = true;
             this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Size = new System.Drawing.Size(348, 36);
+            this.txtCustomerName.Size = new System.Drawing.Size(548, 42);
             this.txtCustomerName.TabIndex = 34;
             // 
             // txtCustomerID
             // 
-            this.txtCustomerID.Location = new System.Drawing.Point(415, 187);
+            this.txtCustomerID.Location = new System.Drawing.Point(415, 147);
             this.txtCustomerID.Margin = new System.Windows.Forms.Padding(4);
             this.txtCustomerID.Multiline = true;
             this.txtCustomerID.Name = "txtCustomerID";
-            this.txtCustomerID.Size = new System.Drawing.Size(348, 34);
+            this.txtCustomerID.Size = new System.Drawing.Size(548, 45);
             this.txtCustomerID.TabIndex = 33;
             // 
             // txtPaymentID
             // 
-            this.txtPaymentID.Location = new System.Drawing.Point(415, 126);
+            this.txtPaymentID.Location = new System.Drawing.Point(401, 88);
             this.txtPaymentID.Margin = new System.Windows.Forms.Padding(4);
             this.txtPaymentID.Multiline = true;
             this.txtPaymentID.Name = "txtPaymentID";
-            this.txtPaymentID.Size = new System.Drawing.Size(348, 40);
+            this.txtPaymentID.Size = new System.Drawing.Size(346, 40);
             this.txtPaymentID.TabIndex = 32;
+            this.txtPaymentID.TextChanged += new System.EventHandler(this.txtPaymentID_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(109, 299);
+            this.label6.Location = new System.Drawing.Point(109, 278);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 20);
@@ -400,7 +393,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(109, 419);
+            this.label5.Location = new System.Drawing.Point(109, 384);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(148, 20);
@@ -411,7 +404,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(109, 356);
+            this.label4.Location = new System.Drawing.Point(109, 319);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 20);
@@ -422,7 +415,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(109, 244);
+            this.label3.Location = new System.Drawing.Point(109, 214);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(144, 20);
@@ -433,7 +426,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(109, 187);
+            this.label2.Location = new System.Drawing.Point(109, 147);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 20);
@@ -444,7 +437,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(109, 128);
+            this.label1.Location = new System.Drawing.Point(109, 93);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 20);
@@ -473,6 +466,44 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "PAYMENT";
             // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.button2.Location = new System.Drawing.Point(809, 28);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(128, 31);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Reset";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.button1.Location = new System.Drawing.Point(673, 28);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 31);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // PaymentGridView
+            // 
+            this.PaymentGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PaymentGridView.Location = new System.Drawing.Point(113, 600);
+            this.PaymentGridView.Name = "PaymentGridView";
+            this.PaymentGridView.RowHeadersWidth = 51;
+            this.PaymentGridView.RowTemplate.Height = 24;
+            this.PaymentGridView.Size = new System.Drawing.Size(1088, 232);
+            this.PaymentGridView.TabIndex = 45;
+            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -495,6 +526,7 @@
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PaymentGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -525,7 +557,6 @@
         private System.Windows.Forms.TextBox txtSearchPayment;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnPayment;
         private System.Windows.Forms.Button btnAttendance;
         private System.Windows.Forms.Button btnAccessories;
@@ -534,5 +565,8 @@
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView PaymentGridView;
     }
 }

@@ -14,11 +14,40 @@ namespace GymManagementSystem
     public partial class Attendance : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Pubz\Documents\GymDatabase.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlDataAdapter DA;
+        DataSet DS = null;
+        BindingSource bindingSource1 = new BindingSource();
         public Attendance()
         {
             InitializeComponent();
+            LoadAllCustomer();
         }
+        private void LoadAllCustomer()
+        {
+            try
+            {
+                DS = new DataSet();
+                bindingSource1.DataSource = null;
 
+                con.Open();
+                string qry = "Select * from Attendance";
+
+                DA = new SqlDataAdapter(qry, con);
+
+                DA.Fill(DS, "Accessories");
+                bindingSource1.DataSource = DS.Tables["Accessories"];
+                AttendanceGridView.DataSource = bindingSource1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error occured : " + ex);
+            }
+            finally
+            {
+                con.Close();
+
+            }
+        }
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             Login two = new Login();
@@ -68,7 +97,7 @@ namespace GymManagementSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string qry = "INSERT INTO Attendance VALUES ('" + txtAttendanceID.Text + "','" +txtCusID.Text + "','" + txtCusName.Text + "','" + TxtTimeIN.Text + "','" +txtTimeOut.Text + "')";
+            string qry = "INSERT INTO Attendance VALUES ('" + txtAttendanceID.Text + "','" +txtCusID.Text + "','" + txtCusName.Text + "','"+dateTimePicker1+"','" + TxtTimeIN.Text + "','" +txtTimeOut.Text + "')";
             SqlCommand cmd = new SqlCommand(qry, con);
             try
             {
@@ -76,7 +105,7 @@ namespace GymManagementSystem
 
                 con.Open();
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("User Registered Successfully");
+                MessageBox.Show("Record added Successfully");
 
             }
             catch (Exception ex)
@@ -86,6 +115,9 @@ namespace GymManagementSystem
             finally
             {
                 con.Close();
+                AttendanceGridView.DataSource = null;
+                LoadAllCustomer();
+
             }
         }
     }
