@@ -39,7 +39,13 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.radioCustomerFemale = new System.Windows.Forms.RadioButton();
+            this.radioCustomerMale = new System.Windows.Forms.RadioButton();
+            this.label11 = new System.Windows.Forms.Label();
+            this.InstructorDetailsGrid = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.reset = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.txtSearchInstructor = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
@@ -60,18 +66,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.InstructorDetailsGrid = new System.Windows.Forms.DataGridView();
-            this.reset = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.radioCustomerMale = new System.Windows.Forms.RadioButton();
-            this.radioCustomerFemale = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InstructorDetailsGrid)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.InstructorDetailsGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -246,6 +246,51 @@
             this.panel3.Size = new System.Drawing.Size(1277, 874);
             this.panel3.TabIndex = 2;
             // 
+            // radioCustomerFemale
+            // 
+            this.radioCustomerFemale.AutoSize = true;
+            this.radioCustomerFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioCustomerFemale.Location = new System.Drawing.Point(607, 371);
+            this.radioCustomerFemale.Name = "radioCustomerFemale";
+            this.radioCustomerFemale.Size = new System.Drawing.Size(91, 24);
+            this.radioCustomerFemale.TabIndex = 8;
+            this.radioCustomerFemale.TabStop = true;
+            this.radioCustomerFemale.Text = "Female";
+            this.radioCustomerFemale.UseVisualStyleBackColor = true;
+            // 
+            // radioCustomerMale
+            // 
+            this.radioCustomerMale.AutoSize = true;
+            this.radioCustomerMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioCustomerMale.Location = new System.Drawing.Point(409, 371);
+            this.radioCustomerMale.Name = "radioCustomerMale";
+            this.radioCustomerMale.Size = new System.Drawing.Size(70, 24);
+            this.radioCustomerMale.TabIndex = 7;
+            this.radioCustomerMale.TabStop = true;
+            this.radioCustomerMale.Text = "Male";
+            this.radioCustomerMale.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(100, 371);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(70, 20);
+            this.label11.TabIndex = 28;
+            this.label11.Text = "Gender";
+            // 
+            // InstructorDetailsGrid
+            // 
+            this.InstructorDetailsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.InstructorDetailsGrid.Location = new System.Drawing.Point(104, 589);
+            this.InstructorDetailsGrid.Name = "InstructorDetailsGrid";
+            this.InstructorDetailsGrid.RowHeadersWidth = 51;
+            this.InstructorDetailsGrid.RowTemplate.Height = 24;
+            this.InstructorDetailsGrid.Size = new System.Drawing.Size(1096, 242);
+            this.InstructorDetailsGrid.TabIndex = 26;
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -258,6 +303,34 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1096, 84);
             this.panel5.TabIndex = 25;
+            // 
+            // reset
+            // 
+            this.reset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reset.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.reset.Location = new System.Drawing.Point(789, 29);
+            this.reset.Margin = new System.Windows.Forms.Padding(4);
+            this.reset.Name = "reset";
+            this.reset.Size = new System.Drawing.Size(128, 31);
+            this.reset.TabIndex = 6;
+            this.reset.Text = "Reset";
+            this.reset.UseVisualStyleBackColor = true;
+            this.reset.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.button1.Location = new System.Drawing.Point(653, 29);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 31);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtSearchInstructor
             // 
@@ -284,7 +357,7 @@
             // 
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(761, 430);
+            this.btnClear.Location = new System.Drawing.Point(877, 430);
             this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(100, 28);
@@ -297,7 +370,7 @@
             // 
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemove.Location = new System.Drawing.Point(653, 430);
+            this.btnRemove.Location = new System.Drawing.Point(769, 430);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(100, 28);
@@ -310,7 +383,7 @@
             // 
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(545, 430);
+            this.btnUpdate.Location = new System.Drawing.Point(661, 430);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 28);
@@ -323,7 +396,7 @@
             // 
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.Location = new System.Drawing.Point(437, 430);
+            this.btnRegister.Location = new System.Drawing.Point(553, 430);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(100, 28);
@@ -334,6 +407,7 @@
             // 
             // txtInstructorTelNo
             // 
+            this.txtInstructorTelNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInstructorTelNo.Location = new System.Drawing.Point(409, 316);
             this.txtInstructorTelNo.Margin = new System.Windows.Forms.Padding(4);
             this.txtInstructorTelNo.Multiline = true;
@@ -343,6 +417,7 @@
             // 
             // txtInstructorEmail
             // 
+            this.txtInstructorEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInstructorEmail.Location = new System.Drawing.Point(409, 269);
             this.txtInstructorEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtInstructorEmail.Multiline = true;
@@ -352,6 +427,7 @@
             // 
             // txtInstructorNIC
             // 
+            this.txtInstructorNIC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInstructorNIC.Location = new System.Drawing.Point(409, 218);
             this.txtInstructorNIC.Margin = new System.Windows.Forms.Padding(4);
             this.txtInstructorNIC.Multiline = true;
@@ -361,6 +437,7 @@
             // 
             // txtInstructorAddress
             // 
+            this.txtInstructorAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInstructorAddress.Location = new System.Drawing.Point(409, 174);
             this.txtInstructorAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtInstructorAddress.Multiline = true;
@@ -371,6 +448,7 @@
             // 
             // txtInstructorName
             // 
+            this.txtInstructorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInstructorName.Location = new System.Drawing.Point(409, 127);
             this.txtInstructorName.Margin = new System.Windows.Forms.Padding(4);
             this.txtInstructorName.Multiline = true;
@@ -380,6 +458,7 @@
             // 
             // txtInstructorID
             // 
+            this.txtInstructorID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInstructorID.Location = new System.Drawing.Point(409, 80);
             this.txtInstructorID.Margin = new System.Windows.Forms.Padding(4);
             this.txtInstructorID.Multiline = true;
@@ -481,79 +560,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "INSTRUCTOR DETAILS";
             // 
-            // InstructorDetailsGrid
-            // 
-            this.InstructorDetailsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.InstructorDetailsGrid.Location = new System.Drawing.Point(104, 589);
-            this.InstructorDetailsGrid.Name = "InstructorDetailsGrid";
-            this.InstructorDetailsGrid.RowHeadersWidth = 51;
-            this.InstructorDetailsGrid.RowTemplate.Height = 24;
-            this.InstructorDetailsGrid.Size = new System.Drawing.Size(1096, 254);
-            this.InstructorDetailsGrid.TabIndex = 26;
-            // 
-            // reset
-            // 
-            this.reset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reset.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.reset.Location = new System.Drawing.Point(789, 29);
-            this.reset.Margin = new System.Windows.Forms.Padding(4);
-            this.reset.Name = "reset";
-            this.reset.Size = new System.Drawing.Size(128, 31);
-            this.reset.TabIndex = 6;
-            this.reset.Text = "Reset";
-            this.reset.UseVisualStyleBackColor = true;
-            this.reset.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.button1.Location = new System.Drawing.Point(653, 29);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 31);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(100, 371);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(70, 20);
-            this.label11.TabIndex = 28;
-            this.label11.Text = "Gender";
-            // 
-            // radioCustomerMale
-            // 
-            this.radioCustomerMale.AutoSize = true;
-            this.radioCustomerMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioCustomerMale.Location = new System.Drawing.Point(409, 371);
-            this.radioCustomerMale.Name = "radioCustomerMale";
-            this.radioCustomerMale.Size = new System.Drawing.Size(70, 24);
-            this.radioCustomerMale.TabIndex = 7;
-            this.radioCustomerMale.TabStop = true;
-            this.radioCustomerMale.Text = "Male";
-            this.radioCustomerMale.UseVisualStyleBackColor = true;
-            // 
-            // radioCustomerFemale
-            // 
-            this.radioCustomerFemale.AutoSize = true;
-            this.radioCustomerFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioCustomerFemale.Location = new System.Drawing.Point(607, 371);
-            this.radioCustomerFemale.Name = "radioCustomerFemale";
-            this.radioCustomerFemale.Size = new System.Drawing.Size(91, 24);
-            this.radioCustomerFemale.TabIndex = 8;
-            this.radioCustomerFemale.TabStop = true;
-            this.radioCustomerFemale.Text = "Female";
-            this.radioCustomerFemale.UseVisualStyleBackColor = true;
-            // 
             // Instructor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -572,11 +578,11 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InstructorDetailsGrid)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.InstructorDetailsGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
