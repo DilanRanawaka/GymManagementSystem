@@ -17,37 +17,39 @@ namespace GymManagementSystem
         SqlDataAdapter DA;
         DataSet DS = null;
         BindingSource bindingSource1 = new BindingSource();
+
         public Payment()
         {
             InitializeComponent();
             LoadAllCustomer();
         }
-    private void LoadAllCustomer()
-    {
-        try
+        private void LoadAllCustomer()
         {
-            DS = new DataSet();
-            bindingSource1.DataSource = null;
+            try
+            {
+                DS = new DataSet();
+                bindingSource1.DataSource = null;
 
-            con.Open();
-            string qry = "Select * from Payment ";
+                con.Open();
+                string qry = "Select * from Payment ";
 
-            DA = new SqlDataAdapter(qry, con);
+                DA = new SqlDataAdapter(qry, con);
 
-            DA.Fill(DS, "Payment");
-            bindingSource1.DataSource = DS.Tables["[Payment"];
-            PaymentGridView.DataSource = bindingSource1;
+                DA.Fill(DS, "Payment");
+                bindingSource1.DataSource = DS.Tables["Payment"];
+                PaymentGridView.DataSource = bindingSource1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error occured : " + ex);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
-        catch (Exception ex)
-        {
-            MessageBox.Show("Error occured : " + ex);
-        }
-        finally
-        {
-            con.Close();
-        }
-    }
-    private void btnDashboard_Click(object sender, EventArgs e)
+
+        private void btnDashboard_Click(object sender, EventArgs e)
         {
             Home three = new Home();
             this.Hide();
@@ -91,7 +93,7 @@ namespace GymManagementSystem
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void TxtAmount_TextChanged(object sender, EventArgs e)
@@ -117,9 +119,9 @@ namespace GymManagementSystem
 
                 foreach (DataGridViewRow row in PaymentGridView.Rows)
                 {
-                    if (row.Cells[0].Value != null)
+                    if (row.Cells[1].Value != null)
                     {
-                        if (row.Cells[0].Value.ToString().Equals(searchValue))
+                        if (row.Cells[1].Value.ToString().Equals(searchValue))
                         {
                             // record exists   
                             Dt.Columns.Add("Payment ID");
@@ -128,6 +130,7 @@ namespace GymManagementSystem
                             Dt.Columns.Add("Date");
                             Dt.Columns.Add("Amount");
                             Dt.Columns.Add("Payment Method");
+                            Dt.Columns.Add("Payment Duration");
 
                             DataRow dr = Dt.NewRow();
                             dr[0] = row.Cells[0].Value;
@@ -136,6 +139,7 @@ namespace GymManagementSystem
                             dr[3] = row.Cells[3].Value;
                             dr[4] = row.Cells[4].Value;
                             dr[5] = row.Cells[5].Value;
+                            dr[6] = row.Cells[6].Value;
 
                             Dt.Rows.Add(dr);
                             break;
@@ -158,15 +162,17 @@ namespace GymManagementSystem
 
         private void btnProceed_Click(object sender, EventArgs e)
         {
-            string paymethod = "Card";
+          
 
-            if (radioButton2.Checked)
+            string paymethod = "Card";
+            if (card.Checked)
             {
                 paymethod = "Cash";
             }
-            string dt = PaymentDate.Value.ToShortDateString();
 
-            string qry = "INSERT INTO Payment VALUES ('" + txtPaymentID.Text + "','" + txtCustomerID.Text + "','" + txtCustomerName.Text + "','" + TxtAmount.Text + "','" + paymethod + "','" + PaymentDate + "')";
+
+
+            string qry = "INSERT INTO Payment VALUES ('" + txtPaymentID.Text + "','" + txtCustomerID.Text + "','" + txtCustomerName.Text + "','" + txtDatePay.Text + "','" + TxtAmount.Text + "','" + paymethod + "','" + paymentDue.Text + "')";
             SqlCommand cmd = new SqlCommand(qry, con);
             try
             {
@@ -189,16 +195,18 @@ namespace GymManagementSystem
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string qry = "UPDATE Payment SET CustomerID = @cust, CustomerName=@CustName, Date=@date, Amount=@amt Where PaymentID = @payID";
+            string qry = "UPDATE Payment SET CustomerID = @custID, CustomerName=@cust, Date=@date, Amount=@amt, PaymentDuration=@due Where PaymentID = @payID";
             SqlCommand cmd = new SqlCommand(qry, con);
             try
             {
                 con.Open();
 
-                cmd.Parameters.AddWithValue("@cust", txtCustomerID.Text);
-                cmd.Parameters.AddWithValue("@CustName", txtCustomerName.Text);
-                cmd.Parameters.AddWithValue("@Date", PaymentDate.Text);
+                cmd.Parameters.AddWithValue("@custID", txtCustomerID.Text);
+                cmd.Parameters.AddWithValue("@cust", txtCustomerName.Text);
+                cmd.Parameters.AddWithValue("@date", txtDatePay.Text);
                 cmd.Parameters.AddWithValue("@amt", TxtAmount.Text);
+                cmd.Parameters.AddWithValue("@due", paymentDue.Text);
+                cmd.Parameters.AddWithValue("@payID", txtPaymentID.Text);
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Record Updated Successfully");
@@ -220,10 +228,12 @@ namespace GymManagementSystem
             txtPaymentID.Text = "";
             txtCustomerID.Text = "";
             txtCustomerName.Text = "";
-            PaymentDate.Text = "";
             TxtAmount.Text = "";
-            radioButton1.Checked = false;
-            radioButton2.Checked = false;
+            txtDatePay.Text = "";
+            paymentDue.Text = "";
+            cash.Checked = false;
+            card.Checked = false;
+           
         }
     }
 }

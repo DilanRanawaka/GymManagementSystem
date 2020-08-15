@@ -316,7 +316,7 @@
             this.lblinstructorcount.Location = new System.Drawing.Point(183, 111);
             this.lblinstructorcount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblinstructorcount.Name = "lblinstructorcount";
-            this.lblinstructorcount.Size = new System.Drawing.Size(0, 39);
+            this.lblinstructorcount.Size = new System.Drawing.Size(0, 38);
             this.lblinstructorcount.TabIndex = 3;
             // 
             // label6
@@ -350,8 +350,9 @@
             this.lblCustomerCount.Location = new System.Drawing.Point(162, 111);
             this.lblCustomerCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCustomerCount.Name = "lblCustomerCount";
-            this.lblCustomerCount.Size = new System.Drawing.Size(0, 39);
+            this.lblCustomerCount.Size = new System.Drawing.Size(0, 38);
             this.lblCustomerCount.TabIndex = 1;
+            this.lblCustomerCount.Click += new System.EventHandler(this.lblCustomerCount_Click);
             // 
             // label2
             // 
@@ -368,13 +369,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1579, 937);
+            this.ClientSize = new System.Drawing.Size(1582, 953);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(1597, 984);
-            this.MinimumSize = new System.Drawing.Size(1597, 984);
+            this.MaximumSize = new System.Drawing.Size(1600, 1000);
+            this.MinimumSize = new System.Drawing.Size(1600, 1000);
             this.Name = "Home";
             this.Text = "Home";
             this.panel1.ResumeLayout(false);

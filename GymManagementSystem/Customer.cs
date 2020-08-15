@@ -223,33 +223,7 @@ namespace GymManagementSystem
                         }
                     }
                 }
-
                 customerdetailsgrid.DataSource = Dt;
-                con.Open();
-                string str = "select * from Customer where CustomerID='" + txtCustomerID.Text.Trim() + "'";
-                SqlCommand command = new SqlCommand(str, con);
-             
-                SqlDataReader reader = command.ExecuteReader();
-
-                if (reader.Read())
-
-                {
-
-                    txtCustomerName.Text = reader["Customer Name"].ToString();
-
-                    txtCustomerAddress.Text = reader["Address"].ToString();
-
-                    txtCustomerNIC.Text = reader["NIC"].ToString();
-
-                    txtEmail.Text = reader["Email"].ToString();
-
-                    txtno.Text = reader["Phone"].ToString();
-
-                    reader.Close();
-
-                    con.Close();
-
-                }
             }
             catch (Exception exc)
             {
@@ -295,6 +269,11 @@ namespace GymManagementSystem
                 customerdetailsgrid.DataSource = null;
                 LoadAllCustomer();
             }
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

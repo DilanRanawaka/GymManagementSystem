@@ -40,14 +40,17 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtDateDay = new System.Windows.Forms.TextBox();
+            this.AttendanceGridView = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.txtSearchAttendance = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txtTimeOut = new System.Windows.Forms.TextBox();
             this.TxtTimeIN = new System.Windows.Forms.TextBox();
             this.txtCusName = new System.Windows.Forms.TextBox();
@@ -61,15 +64,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.AttendanceGridView = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AttendanceGridView)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AttendanceGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -225,13 +225,13 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel3.Controls.Add(this.txtDateDay);
             this.panel3.Controls.Add(this.AttendanceGridView);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.btnClear);
             this.panel3.Controls.Add(this.btnRemove);
             this.panel3.Controls.Add(this.btnUpdate);
             this.panel3.Controls.Add(this.btnAdd);
-            this.panel3.Controls.Add(this.dateTimePicker1);
             this.panel3.Controls.Add(this.txtTimeOut);
             this.panel3.Controls.Add(this.TxtTimeIN);
             this.panel3.Controls.Add(this.txtCusName);
@@ -250,6 +250,25 @@
             this.panel3.Size = new System.Drawing.Size(1272, 871);
             this.panel3.TabIndex = 2;
             // 
+            // txtDateDay
+            // 
+            this.txtDateDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDateDay.Location = new System.Drawing.Point(413, 235);
+            this.txtDateDay.Multiline = true;
+            this.txtDateDay.Name = "txtDateDay";
+            this.txtDateDay.Size = new System.Drawing.Size(516, 42);
+            this.txtDateDay.TabIndex = 23;
+            // 
+            // AttendanceGridView
+            // 
+            this.AttendanceGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AttendanceGridView.Location = new System.Drawing.Point(113, 607);
+            this.AttendanceGridView.Name = "AttendanceGridView";
+            this.AttendanceGridView.RowHeadersWidth = 51;
+            this.AttendanceGridView.RowTemplate.Height = 24;
+            this.AttendanceGridView.Size = new System.Drawing.Size(1105, 238);
+            this.AttendanceGridView.TabIndex = 36;
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -262,6 +281,35 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1105, 84);
             this.panel6.TabIndex = 35;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.button2.Location = new System.Drawing.Point(798, 23);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(128, 31);
+            this.button2.TabIndex = 32;
+            this.button2.Text = "Reset";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.button1.Location = new System.Drawing.Point(662, 23);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 31);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtSearchAttendance
             // 
@@ -270,7 +318,7 @@
             this.txtSearchAttendance.Multiline = true;
             this.txtSearchAttendance.Name = "txtSearchAttendance";
             this.txtSearchAttendance.Size = new System.Drawing.Size(339, 40);
-            this.txtSearchAttendance.TabIndex = 1;
+            this.txtSearchAttendance.TabIndex = 30;
             // 
             // label9
             // 
@@ -290,9 +338,10 @@
             this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(100, 28);
-            this.btnClear.TabIndex = 34;
+            this.btnClear.TabIndex = 29;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnRemove
             // 
@@ -301,9 +350,10 @@
             this.btnRemove.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(100, 28);
-            this.btnRemove.TabIndex = 33;
+            this.btnRemove.TabIndex = 28;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnUpdate
             // 
@@ -312,9 +362,10 @@
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 28);
-            this.btnUpdate.TabIndex = 32;
+            this.btnUpdate.TabIndex = 27;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -323,39 +374,30 @@
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 28);
-            this.btnAdd.TabIndex = 31;
+            this.btnAdd.TabIndex = 26;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(415, 257);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(514, 27);
-            this.dateTimePicker1.TabIndex = 25;
-            // 
             // txtTimeOut
             // 
             this.txtTimeOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimeOut.Location = new System.Drawing.Point(415, 347);
+            this.txtTimeOut.Location = new System.Drawing.Point(413, 341);
             this.txtTimeOut.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimeOut.Multiline = true;
             this.txtTimeOut.Name = "txtTimeOut";
             this.txtTimeOut.Size = new System.Drawing.Size(514, 40);
-            this.txtTimeOut.TabIndex = 24;
+            this.txtTimeOut.TabIndex = 25;
             // 
             // TxtTimeIN
             // 
             this.TxtTimeIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTimeIN.Location = new System.Drawing.Point(415, 299);
+            this.TxtTimeIN.Location = new System.Drawing.Point(413, 290);
             this.TxtTimeIN.Margin = new System.Windows.Forms.Padding(4);
             this.TxtTimeIN.Multiline = true;
             this.TxtTimeIN.Name = "TxtTimeIN";
             this.TxtTimeIN.Size = new System.Drawing.Size(514, 40);
-            this.TxtTimeIN.TabIndex = 23;
+            this.TxtTimeIN.TabIndex = 24;
             // 
             // txtCusName
             // 
@@ -391,7 +433,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(109, 257);
+            this.label6.Location = new System.Drawing.Point(109, 235);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 20);
@@ -402,7 +444,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(109, 361);
+            this.label5.Location = new System.Drawing.Point(109, 347);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(135, 20);
@@ -413,7 +455,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(109, 310);
+            this.label4.Location = new System.Drawing.Point(109, 293);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 20);
@@ -424,7 +466,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(109, 204);
+            this.label3.Location = new System.Drawing.Point(109, 188);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(144, 20);
@@ -435,7 +477,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(109, 146);
+            this.label2.Location = new System.Drawing.Point(109, 140);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 20);
@@ -475,53 +517,17 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "ATTENDANCE";
             // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.button2.Location = new System.Drawing.Point(798, 23);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 31);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Reset";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.button1.Location = new System.Drawing.Point(662, 23);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 31);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // AttendanceGridView
-            // 
-            this.AttendanceGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AttendanceGridView.Location = new System.Drawing.Point(113, 607);
-            this.AttendanceGridView.Name = "AttendanceGridView";
-            this.AttendanceGridView.RowHeadersWidth = 51;
-            this.AttendanceGridView.RowTemplate.Height = 24;
-            this.AttendanceGridView.Size = new System.Drawing.Size(1105, 238);
-            this.AttendanceGridView.TabIndex = 36;
-            // 
             // Attendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1579, 937);
+            this.ClientSize = new System.Drawing.Size(1582, 953);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(1597, 984);
-            this.MinimumSize = new System.Drawing.Size(1597, 984);
+            this.MaximumSize = new System.Drawing.Size(1600, 1000);
+            this.MinimumSize = new System.Drawing.Size(1600, 1000);
             this.Name = "Attendance";
             this.Text = "Attendance";
             this.panel1.ResumeLayout(false);
@@ -529,11 +535,11 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AttendanceGridView)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AttendanceGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -545,7 +551,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox txtTimeOut;
         private System.Windows.Forms.TextBox TxtTimeIN;
         private System.Windows.Forms.TextBox txtCusName;
@@ -576,5 +581,6 @@
         private System.Windows.Forms.DataGridView AttendanceGridView;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtDateDay;
     }
 }

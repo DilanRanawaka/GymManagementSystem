@@ -39,6 +39,8 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtDatePay = new System.Windows.Forms.TextBox();
             this.PaymentGridView = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
@@ -48,9 +50,8 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnProceed = new System.Windows.Forms.Button();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.PaymentDate = new System.Windows.Forms.DateTimePicker();
+            this.card = new System.Windows.Forms.RadioButton();
+            this.cash = new System.Windows.Forms.RadioButton();
             this.TxtAmount = new System.Windows.Forms.TextBox();
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
@@ -63,6 +64,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.paymentDue = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -215,14 +217,16 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel3.Controls.Add(this.paymentDue);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.txtDatePay);
             this.panel3.Controls.Add(this.PaymentGridView);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.btnClear);
             this.panel3.Controls.Add(this.btnUpdate);
             this.panel3.Controls.Add(this.btnProceed);
-            this.panel3.Controls.Add(this.radioButton2);
-            this.panel3.Controls.Add(this.radioButton1);
-            this.panel3.Controls.Add(this.PaymentDate);
+            this.panel3.Controls.Add(this.card);
+            this.panel3.Controls.Add(this.cash);
             this.panel3.Controls.Add(this.TxtAmount);
             this.panel3.Controls.Add(this.txtCustomerName);
             this.panel3.Controls.Add(this.txtCustomerID);
@@ -240,10 +244,29 @@
             this.panel3.Size = new System.Drawing.Size(1277, 874);
             this.panel3.TabIndex = 2;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(109, 429);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(159, 20);
+            this.label10.TabIndex = 47;
+            this.label10.Text = "Payment Duration";
+            // 
+            // txtDatePay
+            // 
+            this.txtDatePay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDatePay.Location = new System.Drawing.Point(415, 264);
+            this.txtDatePay.Multiline = true;
+            this.txtDatePay.Name = "txtDatePay";
+            this.txtDatePay.Size = new System.Drawing.Size(548, 43);
+            this.txtDatePay.TabIndex = 46;
+            // 
             // PaymentGridView
             // 
             this.PaymentGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PaymentGridView.Location = new System.Drawing.Point(113, 600);
+            this.PaymentGridView.Location = new System.Drawing.Point(113, 620);
             this.PaymentGridView.Name = "PaymentGridView";
             this.PaymentGridView.RowHeadersWidth = 51;
             this.PaymentGridView.RowTemplate.Height = 24;
@@ -257,7 +280,7 @@
             this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.txtSearchPayment);
             this.panel5.Controls.Add(this.label9);
-            this.panel5.Location = new System.Drawing.Point(113, 481);
+            this.panel5.Location = new System.Drawing.Point(113, 509);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1088, 93);
@@ -314,7 +337,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(863, 429);
+            this.btnClear.Location = new System.Drawing.Point(862, 464);
             this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(100, 28);
@@ -326,7 +349,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(755, 429);
+            this.btnUpdate.Location = new System.Drawing.Point(754, 464);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 28);
@@ -338,7 +361,7 @@
             // btnProceed
             // 
             this.btnProceed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProceed.Location = new System.Drawing.Point(647, 429);
+            this.btnProceed.Location = new System.Drawing.Point(646, 464);
             this.btnProceed.Margin = new System.Windows.Forms.Padding(4);
             this.btnProceed.Name = "btnProceed";
             this.btnProceed.Size = new System.Drawing.Size(100, 28);
@@ -347,43 +370,36 @@
             this.btnProceed.UseVisualStyleBackColor = true;
             this.btnProceed.Click += new System.EventHandler(this.btnProceed_Click);
             // 
-            // radioButton2
+            // card
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(587, 382);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(70, 24);
-            this.radioButton2.TabIndex = 39;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Card";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.card.AutoSize = true;
+            this.card.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.card.Location = new System.Drawing.Point(589, 379);
+            this.card.Margin = new System.Windows.Forms.Padding(4);
+            this.card.Name = "card";
+            this.card.Size = new System.Drawing.Size(70, 24);
+            this.card.TabIndex = 39;
+            this.card.TabStop = true;
+            this.card.Text = "Card";
+            this.card.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // cash
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(415, 382);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(73, 24);
-            this.radioButton1.TabIndex = 38;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Cash";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // PaymentDate
-            // 
-            this.PaymentDate.Location = new System.Drawing.Point(415, 276);
-            this.PaymentDate.Margin = new System.Windows.Forms.Padding(4);
-            this.PaymentDate.Name = "PaymentDate";
-            this.PaymentDate.Size = new System.Drawing.Size(548, 22);
-            this.PaymentDate.TabIndex = 37;
+            this.cash.AutoSize = true;
+            this.cash.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cash.Location = new System.Drawing.Point(415, 379);
+            this.cash.Margin = new System.Windows.Forms.Padding(4);
+            this.cash.Name = "cash";
+            this.cash.Size = new System.Drawing.Size(73, 24);
+            this.cash.TabIndex = 38;
+            this.cash.TabStop = true;
+            this.cash.Text = "Cash";
+            this.cash.UseVisualStyleBackColor = true;
             // 
             // TxtAmount
             // 
-            this.TxtAmount.Location = new System.Drawing.Point(415, 319);
+            this.TxtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtAmount.Location = new System.Drawing.Point(415, 320);
             this.TxtAmount.Margin = new System.Windows.Forms.Padding(4);
             this.TxtAmount.Multiline = true;
             this.TxtAmount.Name = "TxtAmount";
@@ -393,6 +409,7 @@
             // 
             // txtCustomerName
             // 
+            this.txtCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerName.Location = new System.Drawing.Point(415, 204);
             this.txtCustomerName.Margin = new System.Windows.Forms.Padding(4);
             this.txtCustomerName.Multiline = true;
@@ -402,6 +419,7 @@
             // 
             // txtCustomerID
             // 
+            this.txtCustomerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerID.Location = new System.Drawing.Point(415, 147);
             this.txtCustomerID.Margin = new System.Windows.Forms.Padding(4);
             this.txtCustomerID.Multiline = true;
@@ -411,6 +429,7 @@
             // 
             // txtPaymentID
             // 
+            this.txtPaymentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPaymentID.Location = new System.Drawing.Point(415, 88);
             this.txtPaymentID.Margin = new System.Windows.Forms.Padding(4);
             this.txtPaymentID.Multiline = true;
@@ -423,7 +442,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(109, 276);
+            this.label6.Location = new System.Drawing.Point(109, 267);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 20);
@@ -434,7 +453,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(109, 384);
+            this.label5.Location = new System.Drawing.Point(109, 379);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(148, 20);
@@ -445,7 +464,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(109, 319);
+            this.label4.Location = new System.Drawing.Point(109, 323);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 20);
@@ -507,17 +526,26 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "PAYMENT";
             // 
+            // paymentDue
+            // 
+            this.paymentDue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paymentDue.Location = new System.Drawing.Point(415, 410);
+            this.paymentDue.Multiline = true;
+            this.paymentDue.Name = "paymentDue";
+            this.paymentDue.Size = new System.Drawing.Size(547, 39);
+            this.paymentDue.TabIndex = 48;
+            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1579, 937);
+            this.ClientSize = new System.Drawing.Size(1582, 953);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(1597, 984);
-            this.MinimumSize = new System.Drawing.Size(1597, 984);
+            this.MaximumSize = new System.Drawing.Size(1600, 1000);
+            this.MinimumSize = new System.Drawing.Size(1600, 1000);
             this.Name = "Payment";
             this.Text = "Payement";
             this.panel1.ResumeLayout(false);
@@ -540,9 +568,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.DateTimePicker PaymentDate;
+        private System.Windows.Forms.RadioButton card;
+        private System.Windows.Forms.RadioButton cash;
         private System.Windows.Forms.TextBox TxtAmount;
         private System.Windows.Forms.TextBox txtCustomerName;
         private System.Windows.Forms.TextBox txtCustomerID;
@@ -571,5 +598,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView PaymentGridView;
+        private System.Windows.Forms.TextBox txtDatePay;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox paymentDue;
     }
 }

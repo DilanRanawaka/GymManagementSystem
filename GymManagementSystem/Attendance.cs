@@ -97,12 +97,13 @@ namespace GymManagementSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string qry = "INSERT INTO Attendance VALUES ('" + txtAttendanceID.Text + "','" +txtCusID.Text + "','" + txtCusName.Text + "','"+dateTimePicker1+"','" + TxtTimeIN.Text + "','" +txtTimeOut.Text + "')";
+            
+
+            string qry = "INSERT INTO Attendance VALUES ('" + txtAttendanceID.Text + "','" +txtCusID.Text + "','" + txtCusName.Text + "','" + txtDateDay.Text + "','" + TxtTimeIN.Text + "','" +txtTimeOut.Text + "')";
             SqlCommand cmd = new SqlCommand(qry, con);
             try
             {
-                string dt = dateTimePicker1.Value.ToShortDateString();
-
+                
                 con.Open();
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Record added Successfully");
@@ -119,6 +120,126 @@ namespace GymManagementSystem
                 LoadAllCustomer();
 
             }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string qry = "UPDATE Attendance SET AttendanceID = @attID, CustomerName=@cust, date=@date, ArrivalTime=@Atime, DepTime=@Dtime Where CustomerID = @custID";
+            SqlCommand cmd = new SqlCommand(qry, con);
+            try
+            {
+                con.Open();
+
+                cmd.Parameters.AddWithValue("@attID", txtAttendanceID.Text);
+                cmd.Parameters.AddWithValue("@cust", txtCusName.Text);
+                cmd.Parameters.AddWithValue("@date", txtDateDay.Text);
+                cmd.Parameters.AddWithValue("@Atime", TxtTimeIN.Text);
+                cmd.Parameters.AddWithValue("@Dtime", txtTimeOut.Text);
+                cmd.Parameters.AddWithValue("@custID", txtCusID.Text);
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Record Updated Successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error generated " + ex);
+            }
+            finally
+            {
+                con.Close();
+                AttendanceGridView.DataSource = null;
+                LoadAllCustomer();
+            }
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            string qry = "DELETE FROM Attendance WHERE AttendanceID='" + txtAttendanceID.Text + "'";
+            SqlCommand cmd = new SqlCommand(qry, con);
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Record Deleted Successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error generated " + ex);
+            }
+            finally
+            {
+                con.Close();
+                AttendanceGridView.DataSource = null;
+                LoadAllCustomer();
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtAttendanceID.Text = "";
+            txtCusID.Text = "";
+            txtCusName.Text = "";
+            txtDateDay.Text = "";
+            TxtTimeIN.Text = "";
+            txtTimeOut.Text = "";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string searchValue = txtSearchAttendance.Text;
+
+            AttendanceGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            try
+            {
+                DataTable Dt = new DataTable();
+                AttendanceGridView.DataSource = bindingSource1;
+
+                foreach (DataGridViewRow row in AttendanceGridView.Rows)
+                {
+                    if (row.Cells[1].Value != null)
+                    {
+                        if (row.Cells[1].Value.ToString().Equals(searchValue))
+                        {
+                            // record exists   
+                            Dt.Columns.Add("Attendance ID");
+                            Dt.Columns.Add("Customer ID");
+                            Dt.Columns.Add("Customer Name");
+                            Dt.Columns.Add("Date");
+                            Dt.Columns.Add("Arrival Time");
+                            Dt.Columns.Add("Departure Time");
+                           
+
+                            DataRow dr = Dt.NewRow();
+                            dr[0] = row.Cells[0].Value;
+                            dr[1] = row.Cells[1].Value;
+                            dr[2] = row.Cells[2].Value;
+                            dr[3] = row.Cells[3].Value;
+                            dr[4] = row.Cells[4].Value;
+                            dr[5] = row.Cells[5].Value;
+                            
+
+                            Dt.Rows.Add(dr);
+                            break;
+                        }
+                    }
+                }
+                AttendanceGridView.DataSource = Dt;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            txtSearchAttendance.Text = "";
+            LoadAllCustomer();
         }
     }
 }

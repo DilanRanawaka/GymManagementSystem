@@ -17,12 +17,12 @@ namespace GymManagementSystem
         SqlDataAdapter DA;
         DataSet DS = null;
         BindingSource bindingSource1 = new BindingSource();
-        BindingSource bindingSource2 = new BindingSource();
 
         public Home()
         {
             InitializeComponent();
             LoadAllCustomer();
+           
         }
 
         private void LoadAllCustomer()
@@ -31,18 +31,41 @@ namespace GymManagementSystem
             {
                 DS = new DataSet();
                 bindingSource1.DataSource = null;
-                bindingSource2.DataSource = null;
 
                 con.Open();
-                string qry = "Select * from Customer ";
+                string qry = "Select * from Customer";
 
                 DA = new SqlDataAdapter(qry, con);
 
-                DA.Fill(DS, "StudentDetails");
-                bindingSource1.DataSource = DS.Tables["StudentDetails"];
+                DA.Fill(DS, "CustomerDetails");
+                bindingSource1.DataSource = DS.Tables["CustomerDetails"];
 
                 lblCustomerCount.Text = bindingSource1.Count.ToString();
-                lblinstructorcount.Text = bindingSource2.Count.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error occured : " + ex);
+            }
+            finally
+            {
+                con.Close();
+            }
+            try
+            {
+                DS = new DataSet();
+                bindingSource1.DataSource = null;
+
+                con.Open();
+                string qry = "Select * from Instructor";
+
+                DA = new SqlDataAdapter(qry, con);
+
+                DA.Fill(DS, "InstructorDetails");
+                bindingSource1.DataSource = DS.Tables["InstructorDetails"];
+
+                lblinstructorcount.Text = bindingSource1.Count.ToString();
+
             }
             catch (Exception ex)
             {
@@ -53,6 +76,8 @@ namespace GymManagementSystem
                 con.Close();
             }
         }
+       
+        
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
@@ -112,6 +137,11 @@ namespace GymManagementSystem
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblCustomerCount_Click(object sender, EventArgs e)
         {
 
         }

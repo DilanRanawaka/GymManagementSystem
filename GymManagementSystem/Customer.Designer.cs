@@ -269,6 +269,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1107, 74);
             this.panel5.TabIndex = 20;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // button2
             // 
@@ -540,13 +541,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1579, 937);
+            this.ClientSize = new System.Drawing.Size(1582, 953);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(1597, 984);
-            this.MinimumSize = new System.Drawing.Size(1597, 984);
+            this.MaximumSize = new System.Drawing.Size(1600, 1000);
+            this.MinimumSize = new System.Drawing.Size(1600, 1000);
             this.Name = "Customer";
             this.Text = "Customer";
             this.panel1.ResumeLayout(false);

@@ -150,17 +150,42 @@ namespace GymManagementSystem
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            string qry = "SELECT * FROM Customer where CustomerID='" + txtInstructorID.Text + "' ";
+            SqlCommand cmd = new SqlCommand(qry, con);
+
+            try
+            {
+                con.Open();
+                SqlDataAdapter DA = new SqlDataAdapter(cmd);
+                DataTable DS = new DataTable();
+                DA.Fill(DS);
+
+
+                if (DS.Rows.Count == 1)
+                {
+                    MessageBox.Show("This customer already exists");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error generated : " + ex);
+            }
+            finally
+            {
+                con.Close();
+            } 
+
             string gender = "Female";
 
             if (radioInstructorMale.Checked)
                 gender = "Male";
 
-            string qry = "INSERT INTO Instructor VALUES ('" + txtInstructorID.Text + "','" + txtInstructorName.Text + "','" + txtInstructorAddress.Text + "','" + txtInstructorNIC.Text + "','" + txtInstructorEmail+ "','" + txtInstructorTelNo + "','" + gender + "')";
-            SqlCommand cmd = new SqlCommand(qry, con);
+            string query = "INSERT INTO Instructor VALUES ('" + txtInstructorID.Text + "','" + txtInstructorName.Text + "','" + txtInstructorAddress.Text + "','" + txtInstructorNIC.Text + "','" + txtInstructorEmail.Text+ "','" + txtInstructorTelNo.Text + "','" + gender + "')";
+            SqlCommand comd = new SqlCommand(query, con);
             try
             {
                 con.Open();
-                cmd.ExecuteNonQuery();
+                comd.ExecuteNonQuery();
                 MessageBox.Show("Instructor Registered Successfully");
 
             }

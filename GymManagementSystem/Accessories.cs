@@ -96,12 +96,12 @@ namespace GymManagementSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string qry = "INSERT INTO Accessories VALUES ('" + txtAccessoryID.Text + "','" + txtAccessoryType.Text + "','" + txtAccessoryBrand.Text + "','" + txtAccessoryQty.Text + "','" + txtAccessoryPrice.Text + "','"+datePicker+"')";
+
+            string qry = "INSERT INTO Accessories VALUES ('" + txtAccessoryID.Text + "','" + txtAccessoryType.Text + "','" + txtAccessoryBrand.Text + "','" + txtAccessoryQty.Text + "','" + txtAccessoryPrice.Text + "','"+txtDate.Text+"')";
             SqlCommand cmd = new SqlCommand(qry, con);
             try
             {
-                string dt = datePicker.Value.ToShortDateString();
-
+               
                 con.Open();
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Accessory added Successfully");
@@ -126,7 +126,117 @@ namespace GymManagementSystem
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            string qry = "UPDATE Accessories SET AccessoryType = @acc, AccessoryBrand=@brand, Quantity=@qua, Price=@price, Date=@date  Where AccessoryID = @accID";
+            SqlCommand cmd = new SqlCommand(qry, con);
+            try
+            {
+                con.Open();
 
+                cmd.Parameters.AddWithValue("@acc", txtAccessoryType.Text);
+                cmd.Parameters.AddWithValue("@brand", txtAccessoryBrand.Text);
+                cmd.Parameters.AddWithValue("@qua", txtAccessoryQty.Text);
+                cmd.Parameters.AddWithValue("@price", txtAccessoryPrice.Text);
+                cmd.Parameters.AddWithValue("@date", txtDate.Text);
+                cmd.Parameters.AddWithValue("@accID", txtAccessoryID.Text);
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Record Updated Successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error generated " + ex);
+            }
+            finally
+            {
+                con.Close();
+                AccessoryGridView.DataSource = null;
+                LoadAllCustomer();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string searchValue = txtSearchAccessory.Text;
+
+            AccessoryGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            try
+            {
+                DataTable Dt = new DataTable();
+                AccessoryGridView.DataSource = bindingSource1;
+
+                foreach (DataGridViewRow row in AccessoryGridView.Rows)
+                {
+                    if (row.Cells[1].Value != null)
+                    {
+                        if (row.Cells[1].Value.ToString().Equals(searchValue))
+                        {
+                            // record exists   
+                            Dt.Columns.Add("Accessory ID");
+                            Dt.Columns.Add("Accessory Type");
+                            Dt.Columns.Add("Brand");
+                            Dt.Columns.Add("Quantity");
+                            Dt.Columns.Add("Price");
+                            Dt.Columns.Add("Date");
+                            
+
+                            DataRow dr = Dt.NewRow();
+                            dr[0] = row.Cells[0].Value;
+                            dr[1] = row.Cells[1].Value;
+                            dr[2] = row.Cells[2].Value;
+                            dr[3] = row.Cells[3].Value;
+                            dr[4] = row.Cells[4].Value;
+                            dr[5] = row.Cells[5].Value;
+                           
+
+                            Dt.Rows.Add(dr);
+                            break;
+                        }
+                    }
+                }
+                AccessoryGridView.DataSource = Dt;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            txtSearchAccessory.Text = "";
+            LoadAllCustomer();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+             txtAccessoryID.Text = "";
+            txtAccessoryType.Text = "";
+            txtAccessoryBrand.Text = "";
+            txtAccessoryQty.Text = "";
+          txtAccessoryPrice.Text = "";
+            txtDate.Text = "";
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            string qry = "DELETE FROM Accessories WHERE AccessoryID='" + txtAccessoryID.Text + "'";
+            SqlCommand cmd = new SqlCommand(qry, con);
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Record Deleted Successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error generated " + ex);
+            }
+            finally
+            {
+                con.Close();
+                AccessoryGridView.DataSource = null;
+                LoadAllCustomer();
+            }
         }
     }
 }
