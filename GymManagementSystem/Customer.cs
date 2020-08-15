@@ -99,19 +99,43 @@ namespace GymManagementSystem
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            string qry = "SELECT * FROM Customer where CustomerID='" + txtCustomerID.Text + "' ";
+            SqlCommand cmd = new SqlCommand(qry, con);
+
+            try
+            {
+                con.Open();
+                SqlDataAdapter DA = new SqlDataAdapter(cmd);
+                DataTable DS = new DataTable();
+                DA.Fill(DS);
+
+
+                if (DS.Rows.Count == 1)
+                {
+                    MessageBox.Show("This customer already exists");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error generated : " + ex);
+            }
+            finally
+            {
+                con.Close();
+            }
+
             string gender = "Female";
 
             if (radioCustomerMale.Checked)
                 gender = "Male";
 
-            // Check on the grid data source whether th customer ID is already exists. If exists give an error msg.
-
-            string qry = "INSERT INTO Customer VALUES ('"+txtCustomerID.Text+ "','" +txtCustomerName.Text + "','" + txtCustomerAddress.Text + "','" + txtCustomerNIC.Text + "','" + txtEmail.Text + "','" + txtno.Text + "','" + gender + "')";
-            SqlCommand cmd = new SqlCommand(qry,con);
+            
+            string query = "INSERT INTO Customer VALUES ('"+txtCustomerID.Text+ "','" +txtCustomerName.Text + "','" + txtCustomerAddress.Text + "','" + txtCustomerNIC.Text + "','" + txtEmail.Text + "','" + txtno.Text + "','" + gender + "')";
+            SqlCommand cmmd = new SqlCommand(query,con);
             try
             {
                 con.Open();
-                cmd.ExecuteNonQuery();
+                cmmd.ExecuteNonQuery();
                 MessageBox.Show("User Registered Successfully");
 
             }
@@ -125,6 +149,7 @@ namespace GymManagementSystem
                 customerdetailsgrid.DataSource = null;
                 LoadAllCustomer();
             }
+            
 
         }
 
@@ -200,6 +225,31 @@ namespace GymManagementSystem
                 }
 
                 customerdetailsgrid.DataSource = Dt;
+                con.Open();
+                string str = "select * from Customer where CustomerID='" + txtCustomerID.Text.Trim() + "'";
+                SqlCommand command = new SqlCommand(str, con);
+             
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+
+                {
+
+                    txtCustomerName.Text = reader["Customer Name"].ToString();
+
+                    txtCustomerAddress.Text = reader["Address"].ToString();
+
+                    txtCustomerNIC.Text = reader["NIC"].ToString();
+
+                    txtEmail.Text = reader["Email"].ToString();
+
+                    txtno.Text = reader["Phone"].ToString();
+
+                    reader.Close();
+
+                    con.Close();
+
+                }
             }
             catch (Exception exc)
             {

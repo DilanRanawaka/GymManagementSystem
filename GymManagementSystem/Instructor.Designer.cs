@@ -39,8 +39,8 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.radioCustomerFemale = new System.Windows.Forms.RadioButton();
-            this.radioCustomerMale = new System.Windows.Forms.RadioButton();
+            this.radioInstructorFemale = new System.Windows.Forms.RadioButton();
+            this.radioInstructorMale = new System.Windows.Forms.RadioButton();
             this.label11 = new System.Windows.Forms.Label();
             this.InstructorDetailsGrid = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -218,8 +218,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel3.Controls.Add(this.radioCustomerFemale);
-            this.panel3.Controls.Add(this.radioCustomerMale);
+            this.panel3.Controls.Add(this.radioInstructorFemale);
+            this.panel3.Controls.Add(this.radioInstructorMale);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.InstructorDetailsGrid);
             this.panel3.Controls.Add(this.panel5);
@@ -246,29 +246,29 @@
             this.panel3.Size = new System.Drawing.Size(1277, 874);
             this.panel3.TabIndex = 2;
             // 
-            // radioCustomerFemale
+            // radioInstructorFemale
             // 
-            this.radioCustomerFemale.AutoSize = true;
-            this.radioCustomerFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioCustomerFemale.Location = new System.Drawing.Point(607, 371);
-            this.radioCustomerFemale.Name = "radioCustomerFemale";
-            this.radioCustomerFemale.Size = new System.Drawing.Size(91, 24);
-            this.radioCustomerFemale.TabIndex = 8;
-            this.radioCustomerFemale.TabStop = true;
-            this.radioCustomerFemale.Text = "Female";
-            this.radioCustomerFemale.UseVisualStyleBackColor = true;
+            this.radioInstructorFemale.AutoSize = true;
+            this.radioInstructorFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioInstructorFemale.Location = new System.Drawing.Point(607, 371);
+            this.radioInstructorFemale.Name = "radioInstructorFemale";
+            this.radioInstructorFemale.Size = new System.Drawing.Size(91, 24);
+            this.radioInstructorFemale.TabIndex = 8;
+            this.radioInstructorFemale.TabStop = true;
+            this.radioInstructorFemale.Text = "Female";
+            this.radioInstructorFemale.UseVisualStyleBackColor = true;
             // 
-            // radioCustomerMale
+            // radioInstructorMale
             // 
-            this.radioCustomerMale.AutoSize = true;
-            this.radioCustomerMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioCustomerMale.Location = new System.Drawing.Point(409, 371);
-            this.radioCustomerMale.Name = "radioCustomerMale";
-            this.radioCustomerMale.Size = new System.Drawing.Size(70, 24);
-            this.radioCustomerMale.TabIndex = 7;
-            this.radioCustomerMale.TabStop = true;
-            this.radioCustomerMale.Text = "Male";
-            this.radioCustomerMale.UseVisualStyleBackColor = true;
+            this.radioInstructorMale.AutoSize = true;
+            this.radioInstructorMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioInstructorMale.Location = new System.Drawing.Point(409, 371);
+            this.radioInstructorMale.Name = "radioInstructorMale";
+            this.radioInstructorMale.Size = new System.Drawing.Size(70, 24);
+            this.radioInstructorMale.TabIndex = 7;
+            this.radioInstructorMale.TabStop = true;
+            this.radioInstructorMale.Text = "Male";
+            this.radioInstructorMale.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -624,8 +624,8 @@
         private System.Windows.Forms.DataGridView InstructorDetailsGrid;
         private System.Windows.Forms.Button reset;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RadioButton radioCustomerFemale;
-        private System.Windows.Forms.RadioButton radioCustomerMale;
+        private System.Windows.Forms.RadioButton radioInstructorFemale;
+        private System.Windows.Forms.RadioButton radioInstructorMale;
         private System.Windows.Forms.Label label11;
     }
 }

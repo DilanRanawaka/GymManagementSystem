@@ -17,6 +17,7 @@ namespace GymManagementSystem
         SqlDataAdapter DA;
         DataSet DS = null;
         BindingSource bindingSource1 = new BindingSource();
+        BindingSource bindingSource2 = new BindingSource();
 
         public Home()
         {
@@ -30,6 +31,7 @@ namespace GymManagementSystem
             {
                 DS = new DataSet();
                 bindingSource1.DataSource = null;
+                bindingSource2.DataSource = null;
 
                 con.Open();
                 string qry = "Select * from Customer ";
@@ -40,7 +42,7 @@ namespace GymManagementSystem
                 bindingSource1.DataSource = DS.Tables["StudentDetails"];
 
                 lblCustomerCount.Text = bindingSource1.Count.ToString();
-                lblinstructorcount.Text = bindingSource1.Count.ToString();
+                lblinstructorcount.Text = bindingSource2.Count.ToString();
             }
             catch (Exception ex)
             {

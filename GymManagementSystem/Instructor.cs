@@ -16,7 +16,7 @@ namespace GymManagementSystem
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Pubz\Documents\GymDatabase.mdf;Integrated Security=True;Connect Timeout=30");
         SqlDataAdapter DA;
         DataSet DS = null;
-        BindingSource bindingSource1 = new BindingSource();
+        BindingSource bindingSource2 = new BindingSource();
 
         public Instructor()
         {
@@ -28,7 +28,7 @@ namespace GymManagementSystem
             try
             {
                 DS = new DataSet();
-                bindingSource1.DataSource = null;
+                bindingSource2.DataSource = null;
 
                 con.Open();
                 string qry = "Select * from Instructor ";
@@ -36,8 +36,8 @@ namespace GymManagementSystem
                 DA = new SqlDataAdapter(qry, con);
 
                 DA.Fill(DS, "InstructorDetails");
-                bindingSource1.DataSource = DS.Tables["InstructorDetails"];
-                InstructorDetailsGrid.DataSource = bindingSource1;
+                bindingSource2.DataSource = DS.Tables["InstructorDetails"];
+                InstructorDetailsGrid.DataSource = bindingSource2;
             }
             catch (Exception ex)
             {
@@ -152,7 +152,7 @@ namespace GymManagementSystem
         {
             string gender = "Female";
 
-            if (radioCustomerMale.Checked)
+            if (radioInstructorMale.Checked)
                 gender = "Male";
 
             string qry = "INSERT INTO Instructor VALUES ('" + txtInstructorID.Text + "','" + txtInstructorName.Text + "','" + txtInstructorAddress.Text + "','" + txtInstructorNIC.Text + "','" + txtInstructorEmail+ "','" + txtInstructorTelNo + "','" + gender + "')";
@@ -214,7 +214,7 @@ namespace GymManagementSystem
             try
             {
                 DataTable Dt = new DataTable();
-                InstructorDetailsGrid.DataSource = bindingSource1;
+                InstructorDetailsGrid.DataSource = bindingSource2;
 
                 foreach (DataGridViewRow row in InstructorDetailsGrid.Rows)
                 {
@@ -262,8 +262,8 @@ namespace GymManagementSystem
             txtInstructorNIC.Text = "";
             txtInstructorEmail.Text = "";
             txtInstructorTelNo.Text = "";
-            radioCustomerFemale.Checked = false;
-            radioCustomerMale.Checked = false;
+            radioInstructorFemale.Checked = false;
+            radioInstructorMale.Checked = false;
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
