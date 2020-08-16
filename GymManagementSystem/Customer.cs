@@ -155,18 +155,68 @@ namespace GymManagementSystem
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            string custName = "";
+            string address = "";
+            string nic = "";
+            string email = "";
+            string no = "";
 
             string qry = "UPDATE Customer SET CustomerName = @cust, Address=@add, NIC=@nic, Email=@mail, Phone=@no  Where CustomerID = @custID";
             SqlCommand cmd = new SqlCommand(qry,con);
             try
             {
                 con.Open();
+                DataTable Dt = new DataTable();
+                customerdetailsgrid.DataSource = bindingSource1;
 
-                cmd.Parameters.AddWithValue("@cust", txtCustomerName.Text);
-                cmd.Parameters.AddWithValue("@add", txtCustomerAddress.Text);
-                cmd.Parameters.AddWithValue("@nic", txtCustomerNIC.Text);
-                cmd.Parameters.AddWithValue("@mail", txtEmail.Text);
-                cmd.Parameters.AddWithValue("@no", txtno.Text);
+                foreach (DataGridViewRow row in customerdetailsgrid.Rows)
+                {
+                    if (row.Cells[0].Value != null)
+                    {
+                        if (row.Cells[0].Value.ToString().Equals(txtCustomerID.Text))
+                        {
+                            DataRow dr = Dt.NewRow();
+
+                            custName = row.Cells[1].Value.ToString();
+                            address = row.Cells[2].Value.ToString();
+                            nic = row.Cells[3].Value.ToString();
+                            email = row.Cells[4].Value.ToString();
+                            no = row.Cells[5].Value.ToString();
+                            break;
+                        }
+                    }
+                }
+
+                if (txtCustomerName.Text != null && txtCustomerName.Text != String.Empty)
+                {
+                    custName = txtCustomerName.Text;
+                }
+
+                if (txtCustomerAddress.Text != null && txtCustomerAddress.Text != String.Empty)
+                {
+                    address = txtCustomerAddress.Text;
+                }
+
+                if (txtCustomerNIC.Text != null && txtCustomerNIC.Text != String.Empty)
+                {
+                    nic = txtCustomerNIC.Text;
+                }
+
+                if (txtEmail.Text != null && txtEmail.Text != String.Empty)
+                {
+                    email = txtEmail.Text;
+                }
+
+                if (txtno.Text != null && txtno.Text != String.Empty)
+                {
+                    no = txtno.Text;
+                }
+
+                cmd.Parameters.AddWithValue("@cust", custName);
+                cmd.Parameters.AddWithValue("@add", address);
+                cmd.Parameters.AddWithValue("@nic", nic);
+                cmd.Parameters.AddWithValue("@mail", email);
+                cmd.Parameters.AddWithValue("@no", no);
                 cmd.Parameters.AddWithValue("@custID", txtCustomerID.Text);
 
                 cmd.ExecuteNonQuery();
@@ -181,6 +231,45 @@ namespace GymManagementSystem
                 con.Close();
                 customerdetailsgrid.DataSource = null;
                 LoadAllCustomer();
+            }
+        }
+
+        private DataTable returnRecord(string searchValue)
+        {
+            customerdetailsgrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            try
+            {
+                DataTable Dt = new DataTable();
+                customerdetailsgrid.DataSource = bindingSource1;
+
+                foreach (DataGridViewRow row in customerdetailsgrid.Rows)
+                {
+                    if (row.Cells[0].Value != null)
+                    {
+                        if (row.Cells[0].Value.ToString().Equals(searchValue))
+                        {
+                            DataRow dr = Dt.NewRow();
+                            
+                            dr[0] = row.Cells[0].Value;
+                            dr[1] = row.Cells[1].Value;
+                            dr[2] = row.Cells[2].Value;
+                            dr[3] = row.Cells[3].Value;
+                            dr[4] = row.Cells[4].Value;
+                            dr[5] = row.Cells[5].Value;
+                            dr[6] = row.Cells[6].Value;
+
+                            Dt.Rows.Add(dr);
+                            break;
+                        }
+                    }
+                }
+
+                return Dt;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+                return null;
             }
         }
 

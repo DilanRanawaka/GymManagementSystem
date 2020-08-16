@@ -170,8 +170,7 @@ namespace GymManagementSystem
                 paymethod = "Cash";
             }
 
-
-
+            //if customer exists validation
             string qry = "INSERT INTO Payment VALUES ('" + txtPaymentID.Text + "','" + txtCustomerID.Text + "','" + txtCustomerName.Text + "','" + txtDatePay.Text + "','" + TxtAmount.Text + "','" + paymethod + "','" + paymentDue.Text + "')";
             SqlCommand cmd = new SqlCommand(qry, con);
             try
