@@ -126,17 +126,68 @@ namespace GymManagementSystem
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string qry = "UPDATE Accessories SET AccessoryType = @acc, AccessoryBrand=@brand, Quantity=@qua, Price=@price, Date=@date  Where AccessoryID = @accID";
+            string type = "";
+            string brand = "";
+            string quan = "";
+            string price = "";
+            string date = "";
+
+            string qry = "UPDATE Accessories SET AccessoryType = @type, AccessoryBrand=@brand, Quantity=@quan, Price=@price, Date=@date  Where AccessoryID = @accID";
             SqlCommand cmd = new SqlCommand(qry, con);
             try
             {
                 con.Open();
+                DataTable Dt = new DataTable();
+                AccessoryGridView.DataSource = bindingSource1;
 
-                cmd.Parameters.AddWithValue("@acc", txtAccessoryType.Text);
-                cmd.Parameters.AddWithValue("@brand", txtAccessoryBrand.Text);
-                cmd.Parameters.AddWithValue("@qua", txtAccessoryQty.Text);
-                cmd.Parameters.AddWithValue("@price", txtAccessoryPrice.Text);
-                cmd.Parameters.AddWithValue("@date", txtDate.Text);
+                foreach (DataGridViewRow row in AccessoryGridView.Rows)
+                {
+                    if (row.Cells[0].Value != null)
+                    {
+                        if (row.Cells[0].Value.ToString().Equals(txtAccessoryID.Text))
+                        {
+                            DataRow dr = Dt.NewRow();
+
+                            type = row.Cells[1].Value.ToString();
+                            brand = row.Cells[2].Value.ToString();
+                            quan = row.Cells[3].Value.ToString();
+                            price = row.Cells[4].Value.ToString();
+                            date = row.Cells[5].Value.ToString();
+                            break;
+                        }
+                    }
+                }
+
+                if (txtAccessoryType.Text != null && txtAccessoryType.Text != String.Empty)
+                {
+                    type = txtAccessoryType.Text;
+                }
+
+                if (txtAccessoryBrand.Text != null && txtAccessoryBrand.Text != String.Empty)
+                {
+                    brand = txtAccessoryBrand.Text;
+                }
+
+                if (txtAccessoryQty.Text != null && txtAccessoryQty.Text != String.Empty)
+                {
+                    quan = txtAccessoryQty.Text;
+                }
+
+                if (txtAccessoryPrice.Text != null && txtAccessoryPrice.Text != String.Empty)
+                {
+                    price = txtAccessoryPrice.Text;
+                }
+
+                if (txtDate.Text != null && txtDate.Text != String.Empty)
+                {
+                    date = txtDate.Text;
+                }
+
+                cmd.Parameters.AddWithValue("@type", type);
+                cmd.Parameters.AddWithValue("@brand", brand);
+                cmd.Parameters.AddWithValue("@quan", quan);
+                cmd.Parameters.AddWithValue("@price", price);
+                cmd.Parameters.AddWithValue("@date", date);
                 cmd.Parameters.AddWithValue("@accID", txtAccessoryID.Text);
 
                 cmd.ExecuteNonQuery();

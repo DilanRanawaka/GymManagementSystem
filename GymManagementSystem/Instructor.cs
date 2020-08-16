@@ -203,17 +203,68 @@ namespace GymManagementSystem
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string qry = "UPDATE Instructor SET InstructorName = @ins, Address=@address, NIC=@nicno, Email=@email, Phone=@nop  Where InstructorID = @insID";
+            string InsName = "";
+            string address = "";
+            string nic = "";
+            string email = "";
+            string no = "";
+
+            string qry = "UPDATE Instructor SET InstructorName = @InsName, Address=@add, NIC=@nic, Email=@mail, Phone=@no  Where InstructorID = @insID";
             SqlCommand cmd = new SqlCommand(qry, con);
             try
             {
                 con.Open();
+                DataTable Dt = new DataTable();
+                InstructorDetailsGrid.DataSource = bindingSource2;
 
-                cmd.Parameters.AddWithValue("@ins", txtInstructorName.Text);
-                cmd.Parameters.AddWithValue("@address", txtInstructorAddress.Text);
-                cmd.Parameters.AddWithValue("@nicno", txtInstructorNIC.Text);
-                cmd.Parameters.AddWithValue("@email", txtInstructorEmail.Text);
-                cmd.Parameters.AddWithValue("@nop", txtInstructorTelNo.Text);
+                foreach (DataGridViewRow row in InstructorDetailsGrid.Rows)
+                {
+                    if (row.Cells[0].Value != null)
+                    {
+                        if (row.Cells[0].Value.ToString().Equals(txtInstructorID.Text))
+                        {
+                            DataRow dr = Dt.NewRow();
+
+                            InsName = row.Cells[1].Value.ToString();
+                            address = row.Cells[2].Value.ToString();
+                            nic = row.Cells[3].Value.ToString();
+                            email = row.Cells[4].Value.ToString();
+                            no = row.Cells[5].Value.ToString();
+                            break;
+                        }
+                    }
+                }
+
+                if (txtInstructorName.Text != null && txtInstructorName.Text != String.Empty)
+                {
+                    InsName = txtInstructorName.Text;
+                }
+
+                if (txtInstructorAddress.Text != null && txtInstructorAddress.Text != String.Empty)
+                {
+                    address = txtInstructorAddress.Text;
+                }
+
+                if (txtInstructorNIC.Text != null && txtInstructorNIC.Text != String.Empty)
+                {
+                    nic = txtInstructorNIC.Text;
+                }
+
+                if (txtInstructorEmail.Text != null && txtInstructorEmail.Text != String.Empty)
+                {
+                    email = txtInstructorEmail.Text;
+                }
+
+                if (txtInstructorTelNo.Text != null && txtInstructorTelNo.Text != String.Empty)
+                {
+                    no = txtInstructorTelNo.Text;
+                }
+
+                cmd.Parameters.AddWithValue("@InsName", InsName);
+                cmd.Parameters.AddWithValue("@add", address);
+                cmd.Parameters.AddWithValue("@nic", nic);
+                cmd.Parameters.AddWithValue("@mail", email);
+                cmd.Parameters.AddWithValue("@no", no);
                 cmd.Parameters.AddWithValue("@insID", txtInstructorID.Text);
 
                 cmd.ExecuteNonQuery();
