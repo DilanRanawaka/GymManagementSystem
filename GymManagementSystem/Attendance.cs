@@ -124,18 +124,70 @@ namespace GymManagementSystem
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string qry = "UPDATE Attendance SET AttendanceID = @attID, CustomerName=@cust, date=@date, ArrivalTime=@Atime, DepTime=@Dtime Where CustomerID = @custID";
+            string custID = "";
+            string custName = "";
+            string Date = "";
+            string Atime = "";
+            string Dtime = "";
+            
+
+            string qry = "UPDATE Attendance SET CustomerID = @custID, CustomerName=@name, Date=@date, ArrivalTime=@Atime, DepTime=@Dtime  Where AttendanceID= @attID";
             SqlCommand cmd = new SqlCommand(qry, con);
             try
             {
                 con.Open();
+                DataTable Dt = new DataTable();
+                AttendanceGridView.DataSource = bindingSource1;
 
-                cmd.Parameters.AddWithValue("@attID", txtAttendanceID.Text);
-                cmd.Parameters.AddWithValue("@cust", txtCusName.Text);
-                cmd.Parameters.AddWithValue("@date", txtDateDay.Text);
-                cmd.Parameters.AddWithValue("@Atime", TxtTimeIN.Text);
-                cmd.Parameters.AddWithValue("@Dtime", txtTimeOut.Text);
-                cmd.Parameters.AddWithValue("@custID", txtCusID.Text);
+                foreach (DataGridViewRow row in AttendanceGridView.Rows)
+                {
+                    if (row.Cells[0].Value != null)
+                    {
+                        if (row.Cells[0].Value.ToString().Equals(txtAttendanceID.Text))
+                        {
+                            DataRow dr = Dt.NewRow();
+
+                            custID = row.Cells[1].Value.ToString();
+                            custName = row.Cells[2].Value.ToString();
+                            Date = row.Cells[3].Value.ToString();
+                            Atime = row.Cells[4].Value.ToString();
+                            Dtime = row.Cells[5].Value.ToString();
+                            break;
+                        }
+                    }
+                }
+
+                if (txtCusID.Text != null && txtCusID.Text != String.Empty)
+                {
+                    custID = txtCusID.Text;
+                }
+
+                if (txtCusName.Text != null && txtCusName.Text != String.Empty)
+                {
+                    custName = txtCusName.Text;
+                }
+
+                if (txtDateDay.Text != null && txtDateDay.Text != String.Empty)
+                {
+                    Date = txtDateDay.Text;
+                }
+
+                if (TxtTimeIN.Text != null && TxtTimeIN.Text != String.Empty)
+                {
+                    Atime = TxtTimeIN.Text;
+                }
+
+                if (txtTimeOut.Text != null && txtTimeOut.Text != String.Empty)
+                {
+                    Dtime = txtTimeOut.Text;
+                }
+
+                cmd.Parameters.AddWithValue("@custID", custID);
+                cmd.Parameters.AddWithValue("@name", custName);
+                cmd.Parameters.AddWithValue("@date", Date);
+                cmd.Parameters.AddWithValue("@Atime", Atime);
+                cmd.Parameters.AddWithValue("@Dtime", Dtime);
+                cmd.Parameters.AddWithValue("@attID",txtAttendanceID.Text);
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Record Updated Successfully");

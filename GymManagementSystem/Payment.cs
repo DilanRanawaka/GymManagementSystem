@@ -194,17 +194,68 @@ namespace GymManagementSystem
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string qry = "UPDATE Payment SET CustomerID = @custID, CustomerName=@cust, Date=@date, Amount=@amt, PaymentDuration=@due Where PaymentID = @payID";
+            string custID = "";
+            string custName = "";
+            string Date = "";
+            string Amount = "";
+            string Duration = "";
+
+            string qry = "UPDATE Payment SET CustomerID = @custID, CustomerName=@cust, Date=@date, Amount=@amount, PaymentDuration=@due  Where PaymentID = @payID";
             SqlCommand cmd = new SqlCommand(qry, con);
             try
             {
                 con.Open();
+                DataTable Dt = new DataTable();
+                PaymentGridView.DataSource = bindingSource1;
 
-                cmd.Parameters.AddWithValue("@custID", txtCustomerID.Text);
-                cmd.Parameters.AddWithValue("@cust", txtCustomerName.Text);
-                cmd.Parameters.AddWithValue("@date", txtDatePay.Text);
-                cmd.Parameters.AddWithValue("@amt", TxtAmount.Text);
-                cmd.Parameters.AddWithValue("@due", paymentDue.Text);
+                foreach (DataGridViewRow row in PaymentGridView.Rows)
+                {
+                    if (row.Cells[0].Value != null)
+                    {
+                        if (row.Cells[0].Value.ToString().Equals(txtPaymentID.Text))
+                        {
+                            DataRow dr = Dt.NewRow();
+
+                            custID = row.Cells[1].Value.ToString();
+                            custName = row.Cells[2].Value.ToString();
+                            Date = row.Cells[3].Value.ToString();
+                            Amount = row.Cells[4].Value.ToString();
+                            Duration = row.Cells[5].Value.ToString();
+                            break;
+                        }
+                    }
+                }
+
+                if (txtCustomerID.Text != null && txtCustomerID.Text != String.Empty)
+                {
+                    custID = txtCustomerID.Text;
+                }
+
+                if (txtCustomerName.Text != null && txtCustomerName.Text != String.Empty)
+                {
+                    custName = txtCustomerName.Text;
+                }
+
+                if (txtDatePay.Text != null && txtDatePay.Text != String.Empty)
+                {
+                    Date = txtDatePay.Text;
+                }
+
+                if (TxtAmount.Text != null && TxtAmount.Text != String.Empty)
+                {
+                    Amount = TxtAmount.Text;
+                }
+
+                if (paymentDue.Text != null && paymentDue.Text != String.Empty)
+                {
+                    Duration = paymentDue.Text;
+                }
+
+                cmd.Parameters.AddWithValue("@custID", custID);
+                cmd.Parameters.AddWithValue("@cust", custName);
+                cmd.Parameters.AddWithValue("@date", Date);
+                cmd.Parameters.AddWithValue("@amount", Amount);
+                cmd.Parameters.AddWithValue("@due", Duration);
                 cmd.Parameters.AddWithValue("@payID", txtPaymentID.Text);
 
                 cmd.ExecuteNonQuery();
