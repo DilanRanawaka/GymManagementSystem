@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPayment = new System.Windows.Forms.Button();
             this.btnAttendance = new System.Windows.Forms.Button();
@@ -296,6 +297,9 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.InstructorDetailsGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.InstructorDetailsGrid.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.InstructorDetailsGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.InstructorDetailsGrid.RowTemplate.Height = 24;
             this.InstructorDetailsGrid.Size = new System.Drawing.Size(1096, 242);
             this.InstructorDetailsGrid.TabIndex = 26;

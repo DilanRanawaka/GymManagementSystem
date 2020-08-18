@@ -97,29 +97,78 @@ namespace GymManagementSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            
+            string query = "SELECT * FROM Attendance where AttendanceID='" + txtAttendanceID.Text + "' ";
+            SqlCommand comd = new SqlCommand(query, con);
 
-            string qry = "INSERT INTO Attendance VALUES ('" + txtAttendanceID.Text + "','" +txtCusID.Text + "','" + txtCusName.Text + "','" + txtDateDay.Text + "','" + TxtTimeIN.Text + "','" +txtTimeOut.Text + "')";
-            SqlCommand cmd = new SqlCommand(qry, con);
             try
             {
-                
                 con.Open();
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Record added Successfully");
+                SqlDataAdapter DA = new SqlDataAdapter(comd);
+                DataTable DS = new DataTable();
+                DA.Fill(DS);
 
+                if (DS.Rows.Count == 1)
+                {
+                    MessageBox.Show("This attendance ID is already used");
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error occured : " + ex);
+                MessageBox.Show("Error generated : " + ex);
             }
             finally
             {
                 con.Close();
-                AttendanceGridView.DataSource = null;
-                LoadAllCustomer();
-
             }
+            string qy = "SELECT * FROM Attendance where CustomerID='" + txtCusID.Text + "' ";
+            SqlCommand cd = new SqlCommand(qy, con);
+
+            try
+            {
+                con.Open();
+                SqlDataAdapter DA = new SqlDataAdapter(cd);
+                DataTable DS = new DataTable();
+                DA.Fill(DS);
+
+                if (DS.Rows.Count != 1)
+                {
+                    MessageBox.Show("This customer does not exist");
+                }
+                else
+                {
+                    string qry = "INSERT INTO Attendance VALUES ('" + txtAttendanceID.Text + "','" + txtCusID.Text + "','" + txtCusName.Text + "','" + txtDateDay.Text + "','" + TxtTimeIN.Text + "','" + txtTimeOut.Text + "')";
+                    SqlCommand cmd = new SqlCommand(qry, con);
+                    try
+                    {
+
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Record added Successfully");
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error occured : " + ex);
+                    }
+                    finally
+                    {
+                        con.Close();
+                        AttendanceGridView.DataSource = null;
+                        LoadAllCustomer();
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error generated : " + ex);
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

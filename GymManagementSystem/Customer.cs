@@ -38,7 +38,7 @@ namespace GymManagementSystem
 
                 DA.Fill(DS, "Customer");
                 bindingSource1.DataSource = DS.Tables["Customer"];                
-                customerdetailsgrid.DataSource = bindingSource1;
+                customerdatagrid.DataSource = bindingSource1;
             }
             catch (Exception ex)
             {
@@ -109,7 +109,6 @@ namespace GymManagementSystem
                 DataTable DS = new DataTable();
                 DA.Fill(DS);
 
-
                 if (DS.Rows.Count == 1)
                 {
                     MessageBox.Show("This customer already exists");
@@ -146,7 +145,7 @@ namespace GymManagementSystem
             finally
             {
                 con.Close();
-                customerdetailsgrid.DataSource = null;
+                customerdatagrid.DataSource = null;
                 LoadAllCustomer();
             }
             
@@ -167,9 +166,9 @@ namespace GymManagementSystem
             {
                 con.Open();
                 DataTable Dt = new DataTable();
-                customerdetailsgrid.DataSource = bindingSource1;
+                customerdatagrid.DataSource = bindingSource1;
 
-                foreach (DataGridViewRow row in customerdetailsgrid.Rows)
+                foreach (DataGridViewRow row in customerdatagrid.Rows)
                 {
                     if (row.Cells[0].Value != null)
                     {
@@ -229,20 +228,20 @@ namespace GymManagementSystem
             finally
             {
                 con.Close();
-                customerdetailsgrid.DataSource = null;
+                customerdatagrid.DataSource = null;
                 LoadAllCustomer();
             }
         }
 
         private DataTable returnRecord(string searchValue)
         {
-            customerdetailsgrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            customerdatagrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             try
             {
                 DataTable Dt = new DataTable();
-                customerdetailsgrid.DataSource = bindingSource1;
+                customerdatagrid.DataSource = bindingSource1;
 
-                foreach (DataGridViewRow row in customerdetailsgrid.Rows)
+                foreach (DataGridViewRow row in customerdatagrid.Rows)
                 {
                     if (row.Cells[0].Value != null)
                     {
@@ -277,13 +276,13 @@ namespace GymManagementSystem
         {
             string searchValue = txtSearchCustomer.Text;
 
-            customerdetailsgrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            customerdatagrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             try
             {
                 DataTable Dt = new DataTable();
-                customerdetailsgrid.DataSource = bindingSource1;
+                customerdatagrid.DataSource = bindingSource1;
 
-                foreach (DataGridViewRow row in customerdetailsgrid.Rows)
+                foreach (DataGridViewRow row in customerdatagrid.Rows)
                 {
                     if(row.Cells[0].Value != null)
                     {
@@ -312,7 +311,7 @@ namespace GymManagementSystem
                         }
                     }
                 }
-                customerdetailsgrid.DataSource = Dt;
+                customerdatagrid.DataSource = Dt;
             }
             catch (Exception exc)
             {
@@ -355,7 +354,7 @@ namespace GymManagementSystem
             finally
             {
                 con.Close();
-                customerdetailsgrid.DataSource = null;
+                customerdatagrid.DataSource = null;
                 LoadAllCustomer();
             }
         }

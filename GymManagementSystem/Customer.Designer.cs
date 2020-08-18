@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPayment = new System.Windows.Forms.Button();
             this.btnAttendance = new System.Windows.Forms.Button();
@@ -41,7 +40,6 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.customerdetailsgrid = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -68,12 +66,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.customerdatagrid = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customerdetailsgrid)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerdatagrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -220,7 +219,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel3.Controls.Add(this.customerdetailsgrid);
+            this.panel3.Controls.Add(this.customerdatagrid);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.btnClear);
             this.panel3.Controls.Add(this.btnRemove);
@@ -248,33 +247,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1277, 874);
             this.panel3.TabIndex = 2;
-            // 
-            // customerdetailsgrid
-            // 
-            this.customerdetailsgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customerdetailsgrid.Location = new System.Drawing.Point(55, 596);
-            this.customerdetailsgrid.Name = "customerdetailsgrid";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.customerdetailsgrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.customerdetailsgrid.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.customerdetailsgrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.customerdetailsgrid.RowTemplate.Height = 24;
-            this.customerdetailsgrid.Size = new System.Drawing.Size(1107, 278);
-            this.customerdetailsgrid.TabIndex = 21;
-            this.customerdetailsgrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerdetailsgrid_CellContentClick);
             // 
             // panel5
             // 
@@ -556,6 +528,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "CUSTOMER DETAILS";
             // 
+            // customerdatagrid
+            // 
+            this.customerdatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customerdatagrid.Location = new System.Drawing.Point(55, 596);
+            this.customerdatagrid.Name = "customerdatagrid";
+            this.customerdatagrid.RowHeadersWidth = 51;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.customerdatagrid.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.customerdatagrid.RowTemplate.Height = 24;
+            this.customerdatagrid.Size = new System.Drawing.Size(1107, 264);
+            this.customerdatagrid.TabIndex = 34;
+            // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -574,11 +559,11 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customerdetailsgrid)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerdatagrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -620,8 +605,8 @@
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnLogOut;
-        private System.Windows.Forms.DataGridView customerdetailsgrid;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView customerdatagrid;
     }
 }

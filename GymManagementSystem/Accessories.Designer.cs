@@ -42,7 +42,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtDate = new System.Windows.Forms.TextBox();
-            this.AccessoryGridView = new System.Windows.Forms.DataGridView();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -65,12 +64,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.AccessoryGridView = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AccessoryGridView)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AccessoryGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -216,8 +216,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel3.Controls.Add(this.txtDate);
             this.panel3.Controls.Add(this.AccessoryGridView);
+            this.panel3.Controls.Add(this.txtDate);
             this.panel3.Controls.Add(this.btnClear);
             this.panel3.Controls.Add(this.btnRemove);
             this.panel3.Controls.Add(this.btnUpdate);
@@ -249,32 +249,6 @@
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(500, 42);
             this.txtDate.TabIndex = 32;
-            // 
-            // AccessoryGridView
-            // 
-            this.AccessoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AccessoryGridView.Location = new System.Drawing.Point(85, 591);
-            this.AccessoryGridView.Name = "AccessoryGridView";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AccessoryGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.AccessoryGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AccessoryGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.AccessoryGridView.RowTemplate.Height = 24;
-            this.AccessoryGridView.Size = new System.Drawing.Size(1127, 251);
-            this.AccessoryGridView.TabIndex = 31;
             // 
             // btnClear
             // 
@@ -525,6 +499,27 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Accessories";
             // 
+            // AccessoryGridView
+            // 
+            this.AccessoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AccessoryGridView.Location = new System.Drawing.Point(85, 568);
+            this.AccessoryGridView.Name = "AccessoryGridView";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AccessoryGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.AccessoryGridView.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.AccessoryGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.AccessoryGridView.RowTemplate.Height = 24;
+            this.AccessoryGridView.Size = new System.Drawing.Size(1127, 281);
+            this.AccessoryGridView.TabIndex = 33;
+            // 
             // Accessories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -543,11 +538,11 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AccessoryGridView)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AccessoryGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -587,7 +582,7 @@
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView AccessoryGridView;
         private System.Windows.Forms.TextBox txtDate;
+        private System.Windows.Forms.DataGridView AccessoryGridView;
     }
 }

@@ -96,6 +96,29 @@ namespace GymManagementSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            string query = "SELECT * FROM Accessories where AccessoryID='" + txtAccessoryID.Text + "' ";
+            SqlCommand comd = new SqlCommand(query, con);
+
+            try
+            {
+                con.Open();
+                SqlDataAdapter DA = new SqlDataAdapter(comd);
+                DataTable DS = new DataTable();
+                DA.Fill(DS);
+
+                if (DS.Rows.Count == 1)
+                {
+                    MessageBox.Show("This accessory already exists");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error generated : " + ex);
+            }
+            finally
+            {
+                con.Close();
+            } 
 
             string qry = "INSERT INTO Accessories VALUES ('" + txtAccessoryID.Text + "','" + txtAccessoryType.Text + "','" + txtAccessoryBrand.Text + "','" + txtAccessoryQty.Text + "','" + txtAccessoryPrice.Text + "','"+txtDate.Text+"')";
             SqlCommand cmd = new SqlCommand(qry, con);

@@ -162,37 +162,86 @@ namespace GymManagementSystem
 
         private void btnProceed_Click(object sender, EventArgs e)
         {
-          
-
             string paymethod = "Card";
             if (card.Checked)
             {
                 paymethod = "Cash";
             }
 
-            //if customer exists validation
-            string qry = "INSERT INTO Payment VALUES ('" + txtPaymentID.Text + "','" + txtCustomerID.Text + "','" + txtCustomerName.Text + "','" + txtDatePay.Text + "','" + TxtAmount.Text + "','" + paymethod + "','" + paymentDue.Text + "')";
-            SqlCommand cmd = new SqlCommand(qry, con);
+            string query = "SELECT * FROM Payment where PaymentID='" + txtPaymentID.Text + "' ";
+            SqlCommand comd = new SqlCommand(query, con);
+
             try
             {
                 con.Open();
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Payment Successfully");
+                SqlDataAdapter DA = new SqlDataAdapter(comd);
+                DataTable DS = new DataTable();
+                DA.Fill(DS);
 
+
+                if (DS.Rows.Count == 1)
+                {
+                    MessageBox.Show("This Payment ID is already used");
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error occured : " + ex);
+                MessageBox.Show("Error generated : " + ex);
             }
             finally
             {
                 con.Close();
-                PaymentGridView.DataSource = null;
-                LoadAllCustomer();
+            }
+            string qy = "SELECT * FROM Attendance where CustomerID='" + txtCustomerID.Text + "' ";
+            SqlCommand cd = new SqlCommand(qy, con);
+
+            try
+            {
+                con.Open();
+                SqlDataAdapter DA = new SqlDataAdapter(cd);
+                DataTable DS = new DataTable();
+                DA.Fill(DS);
+
+                if (DS.Rows.Count != 1)
+                {
+                    MessageBox.Show("This customer does not exist");
+                }
+                else
+                {
+                    string qry = "INSERT INTO Payment VALUES ('" + txtPaymentID.Text + "','" + txtCustomerID.Text + "','" + txtCustomerName.Text + "','" + txtDatePay.Text + "','" + TxtAmount.Text + "','" + paymethod + "','" + paymentDue.Text + "')";
+                    SqlCommand cmd = new SqlCommand(qry, con);
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Payment Successfully");
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error occured : " + ex);
+                    }
+                    finally
+                    {
+                        con.Close();
+                        PaymentGridView.DataSource = null;
+                        LoadAllCustomer();
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error generated : " + ex);
+            }
+            finally
+            {
+                con.Close();
             }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+
+            private void btnUpdate_Click(object sender, EventArgs e)
         {
             string custID = "";
             string custName = "";

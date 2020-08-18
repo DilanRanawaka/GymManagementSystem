@@ -163,7 +163,7 @@ namespace GymManagementSystem
 
                 if (DS.Rows.Count == 1)
                 {
-                    MessageBox.Show("This customer already exists");
+                    MessageBox.Show("This Instructor already exists");
                 }
             }
             catch (Exception ex)
