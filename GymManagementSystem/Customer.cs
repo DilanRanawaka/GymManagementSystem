@@ -364,5 +364,10 @@ namespace GymManagementSystem
         {
 
         }
+
+        private void customerdetailsgrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

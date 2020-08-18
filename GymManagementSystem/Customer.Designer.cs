@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPayment = new System.Windows.Forms.Button();
             this.btnAttendance = new System.Windows.Forms.Button();
@@ -252,10 +253,19 @@
             this.customerdetailsgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.customerdetailsgrid.Location = new System.Drawing.Point(55, 596);
             this.customerdetailsgrid.Name = "customerdetailsgrid";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.customerdetailsgrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.customerdetailsgrid.RowHeadersWidth = 51;
             this.customerdetailsgrid.RowTemplate.Height = 24;
             this.customerdetailsgrid.Size = new System.Drawing.Size(1107, 278);
             this.customerdetailsgrid.TabIndex = 21;
+            this.customerdetailsgrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerdetailsgrid_CellContentClick);
             // 
             // panel5
             // 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPayment = new System.Windows.Forms.Button();
             this.btnAttendance = new System.Windows.Forms.Button();
@@ -39,6 +40,7 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtDate = new System.Windows.Forms.TextBox();
             this.AccessoryGridView = new System.Windows.Forms.DataGridView();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
@@ -62,7 +64,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtDate = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -239,11 +240,28 @@
             this.panel3.Size = new System.Drawing.Size(1277, 874);
             this.panel3.TabIndex = 2;
             // 
+            // txtDate
+            // 
+            this.txtDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDate.Location = new System.Drawing.Point(387, 339);
+            this.txtDate.Multiline = true;
+            this.txtDate.Name = "txtDate";
+            this.txtDate.Size = new System.Drawing.Size(500, 42);
+            this.txtDate.TabIndex = 32;
+            // 
             // AccessoryGridView
             // 
             this.AccessoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AccessoryGridView.Location = new System.Drawing.Point(85, 591);
             this.AccessoryGridView.Name = "AccessoryGridView";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AccessoryGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.AccessoryGridView.RowHeadersWidth = 51;
             this.AccessoryGridView.RowTemplate.Height = 24;
             this.AccessoryGridView.Size = new System.Drawing.Size(1127, 251);
@@ -497,15 +515,6 @@
             this.label7.Size = new System.Drawing.Size(155, 29);
             this.label7.TabIndex = 0;
             this.label7.Text = "Accessories";
-            // 
-            // txtDate
-            // 
-            this.txtDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDate.Location = new System.Drawing.Point(387, 339);
-            this.txtDate.Multiline = true;
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(500, 42);
-            this.txtDate.TabIndex = 32;
             // 
             // Accessories
             // 

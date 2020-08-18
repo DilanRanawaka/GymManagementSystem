@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPayment = new System.Windows.Forms.Button();
             this.btnAttendance = new System.Windows.Forms.Button();
@@ -39,6 +40,7 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.paymentDue = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtDatePay = new System.Windows.Forms.TextBox();
             this.PaymentGridView = new System.Windows.Forms.DataGridView();
@@ -64,7 +66,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.paymentDue = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -244,6 +245,15 @@
             this.panel3.Size = new System.Drawing.Size(1277, 874);
             this.panel3.TabIndex = 2;
             // 
+            // paymentDue
+            // 
+            this.paymentDue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paymentDue.Location = new System.Drawing.Point(415, 410);
+            this.paymentDue.Multiline = true;
+            this.paymentDue.Name = "paymentDue";
+            this.paymentDue.Size = new System.Drawing.Size(547, 39);
+            this.paymentDue.TabIndex = 48;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -268,6 +278,14 @@
             this.PaymentGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PaymentGridView.Location = new System.Drawing.Point(113, 620);
             this.PaymentGridView.Name = "PaymentGridView";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PaymentGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.PaymentGridView.RowHeadersWidth = 51;
             this.PaymentGridView.RowTemplate.Height = 24;
             this.PaymentGridView.Size = new System.Drawing.Size(1088, 232);
@@ -525,15 +543,6 @@
             this.label7.Size = new System.Drawing.Size(137, 29);
             this.label7.TabIndex = 0;
             this.label7.Text = "PAYMENT";
-            // 
-            // paymentDue
-            // 
-            this.paymentDue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.paymentDue.Location = new System.Drawing.Point(415, 410);
-            this.paymentDue.Multiline = true;
-            this.paymentDue.Name = "paymentDue";
-            this.paymentDue.Size = new System.Drawing.Size(547, 39);
-            this.paymentDue.TabIndex = 48;
             // 
             // Payment
             // 
