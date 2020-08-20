@@ -57,7 +57,7 @@ namespace GymManagementSystem
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            Home three = new Home();
+            Customer three = new Customer();
             this.Hide();
             three.Show();
         }
@@ -78,7 +78,7 @@ namespace GymManagementSystem
 
         private void btnAttendance_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnPayment_Click(object sender, EventArgs e)
@@ -120,7 +120,8 @@ namespace GymManagementSystem
             {
                 con.Close();
             }
-            string qy = "SELECT * FROM Attendance where CustomerID='" + txtCusID.Text + "' ";
+
+            string qy = "SELECT * FROM Customer where CustomerID='" + txtCusID.Text + "' ";
             SqlCommand cd = new SqlCommand(qy, con);
 
             try
@@ -130,21 +131,20 @@ namespace GymManagementSystem
                 DataTable DS = new DataTable();
                 DA.Fill(DS);
 
-                if (DS.Rows.Count != 1)
+                if (DS.Rows.Count == 0)
                 {
                     MessageBox.Show("This customer does not exist");
                 }
                 else
                 {
-                    string qry = "INSERT INTO Attendance VALUES ('" + txtAttendanceID.Text + "','" + txtCusID.Text + "','" + txtCusName.Text + "','" + txtDateDay.Text + "','" + TxtTimeIN.Text + "','" + txtTimeOut.Text + "')";
-                    SqlCommand cmd = new SqlCommand(qry, con);
+                    string qury = "INSERT INTO Attendance VALUES ('" + txtAttendanceID.Text + "','" + txtCusID.Text + "','" + txtCusName.Text + "','" + txtDateDay.Text + "','" + TxtTimeIN.Text + "','" + txtTimeOut.Text + "')";
+                    SqlCommand cmd = new SqlCommand(qury, con);
+
                     try
                     {
-
-                        con.Open();
+                        
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Record added Successfully");
-
                     }
                     catch (Exception ex)
                     {
@@ -155,8 +155,8 @@ namespace GymManagementSystem
                         con.Close();
                         AttendanceGridView.DataSource = null;
                         LoadAllCustomer();
-
                     }
+
                 }
             }
             catch (Exception ex)
@@ -167,8 +167,6 @@ namespace GymManagementSystem
             {
                 con.Close();
             }
-
-            
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -283,53 +281,18 @@ namespace GymManagementSystem
             txtDateDay.Text = "";
             TxtTimeIN.Text = "";
             txtTimeOut.Text = "";
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string searchValue = txtSearchAttendance.Text;
+            string query = "Select * from Attendance where CustomerID ='" + txtSearchAttendance.Text + "'";
+            SqlDataAdapter DA = new SqlDataAdapter(query,con);
 
-            AttendanceGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            try
-            {
-                DataTable Dt = new DataTable();
-                AttendanceGridView.DataSource = bindingSource1;
-
-                foreach (DataGridViewRow row in AttendanceGridView.Rows)
-                {
-                    if (row.Cells[1].Value != null)
-                    {
-                        if (row.Cells[1].Value.ToString().Equals(searchValue))
-                        {
-                            // record exists   
-                            Dt.Columns.Add("Attendance ID");
-                            Dt.Columns.Add("Customer ID");
-                            Dt.Columns.Add("Customer Name");
-                            Dt.Columns.Add("Date");
-                            Dt.Columns.Add("Arrival Time");
-                            Dt.Columns.Add("Departure Time");
-                           
-
-                            DataRow dr = Dt.NewRow();
-                            dr[0] = row.Cells[0].Value;
-                            dr[1] = row.Cells[1].Value;
-                            dr[2] = row.Cells[2].Value;
-                            dr[3] = row.Cells[3].Value;
-                            dr[4] = row.Cells[4].Value;
-                            dr[5] = row.Cells[5].Value;
-                            
-
-                            Dt.Rows.Add(dr);
-                            break;
-                        }
-                    }
-                }
-                AttendanceGridView.DataSource = Dt;
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
-            }
+            DataSet DS = new DataSet();
+            DA.Fill(DS, "Attendance");
+            bindingSource1.DataSource = DS.Tables["Attendance"];
+            AttendanceGridView.DataSource = bindingSource1;
         }
 
         private void panel6_Paint(object sender, PaintEventArgs e)

@@ -178,7 +178,6 @@ namespace GymManagementSystem
                 DataTable DS = new DataTable();
                 DA.Fill(DS);
 
-
                 if (DS.Rows.Count == 1)
                 {
                     MessageBox.Show("This Payment ID is already used");
@@ -192,7 +191,8 @@ namespace GymManagementSystem
             {
                 con.Close();
             }
-            string qy = "SELECT * FROM Attendance where CustomerID='" + txtCustomerID.Text + "' ";
+
+            string qy = "SELECT * FROM Customer where CustomerID='" + txtCustomerID.Text + "' ";
             SqlCommand cd = new SqlCommand(qy, con);
 
             try
@@ -202,20 +202,20 @@ namespace GymManagementSystem
                 DataTable DS = new DataTable();
                 DA.Fill(DS);
 
-                if (DS.Rows.Count != 1)
+                if (DS.Rows.Count == 0)
                 {
                     MessageBox.Show("This customer does not exist");
                 }
                 else
                 {
-                    string qry = "INSERT INTO Payment VALUES ('" + txtPaymentID.Text + "','" + txtCustomerID.Text + "','" + txtCustomerName.Text + "','" + txtDatePay.Text + "','" + TxtAmount.Text + "','" + paymethod + "','" + paymentDue.Text + "')";
-                    SqlCommand cmd = new SqlCommand(qry, con);
+                    string qury = "INSERT INTO Payment VALUES ('" + txtPaymentID.Text + "','" + txtCustomerID.Text + "','" + txtCustomerName.Text + "','" + txtDatePay.Text + "','" + TxtAmount.Text + "','" + paymethod + "','" + paymentDue + "')";
+                    SqlCommand cmd = new SqlCommand(qury, con);
+
                     try
                     {
-                        con.Open();
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Payment Successfully");
 
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Record added Successfully");
                     }
                     catch (Exception ex)
                     {
@@ -227,9 +227,9 @@ namespace GymManagementSystem
                         PaymentGridView.DataSource = null;
                         LoadAllCustomer();
                     }
+
                 }
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show("Error generated : " + ex);
@@ -238,7 +238,7 @@ namespace GymManagementSystem
             {
                 con.Close();
             }
-        }
+            }
 
 
             private void btnUpdate_Click(object sender, EventArgs e)

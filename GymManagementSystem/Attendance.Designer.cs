@@ -326,6 +326,7 @@
             // 
             // txtSearchAttendance
             // 
+            this.txtSearchAttendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchAttendance.Location = new System.Drawing.Point(293, 18);
             this.txtSearchAttendance.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearchAttendance.Multiline = true;
