@@ -281,7 +281,6 @@ namespace GymManagementSystem
             txtDateDay.Text = "";
             TxtTimeIN.Text = "";
             txtTimeOut.Text = "";
-           
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -1,0 +1,12 @@
+The Login details
+
+username : Admin
+Password : Admin123
+
+*******************************************
+
+The Database path
+
+C:\USERS\PUBZ\DOCUMENTS\GYMDATABASE.MDF
+
+******************************************* 
