@@ -109,50 +109,13 @@ namespace GymManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string searchValue = txtSearchPayment.Text;
+            string query = "Select * from Payment where CustomerID ='" + txtSearchPayment.Text + "'";
+            SqlDataAdapter DA = new SqlDataAdapter(query, con);
 
-            PaymentGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            try
-            {
-                DataTable Dt = new DataTable();
-                PaymentGridView.DataSource = bindingSource1;
-
-                foreach (DataGridViewRow row in PaymentGridView.Rows)
-                {
-                    if (row.Cells[1].Value != null)
-                    {
-                        if (row.Cells[1].Value.ToString().Equals(searchValue))
-                        {
-                            // record exists   
-                            Dt.Columns.Add("Payment ID");
-                            Dt.Columns.Add("Customer ID");
-                            Dt.Columns.Add("Customer Name");
-                            Dt.Columns.Add("Date");
-                            Dt.Columns.Add("Amount");
-                            Dt.Columns.Add("Payment Method");
-                            Dt.Columns.Add("Payment Duration");
-
-                            DataRow dr = Dt.NewRow();
-                            dr[0] = row.Cells[0].Value;
-                            dr[1] = row.Cells[1].Value;
-                            dr[2] = row.Cells[2].Value;
-                            dr[3] = row.Cells[3].Value;
-                            dr[4] = row.Cells[4].Value;
-                            dr[5] = row.Cells[5].Value;
-                            dr[6] = row.Cells[6].Value;
-
-                            Dt.Rows.Add(dr);
-                            break;
-                        }
-                    }
-                }
-
-                PaymentGridView.DataSource = Dt;
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
-            }
+            DataSet DS = new DataSet();
+            DA.Fill(DS, "Payment");
+            bindingSource1.DataSource = DS.Tables["Payment"];
+            PaymentGridView.DataSource = bindingSource1;
         }
 
         private void txtPaymentID_TextChanged(object sender, EventArgs e)

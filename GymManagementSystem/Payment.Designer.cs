@@ -338,6 +338,7 @@
             // 
             // txtSearchPayment
             // 
+            this.txtSearchPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchPayment.Location = new System.Drawing.Point(255, 15);
             this.txtSearchPayment.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearchPayment.Multiline = true;
